@@ -17,17 +17,23 @@
         <h1>Tạo mới User</h1>
 
         <form action="" method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control">
+            <label for="tk_user">Name</label>
+            <input type="text" name="tk_user" class="form-control">
 
-            <label for="email" class="mt-3">Email</label>
-            <input type="email" name="email" class="form-control">
+            <label for="pass_user" class="mt-3">Pass</label>
+            <input type="password" name="pass_user" class="form-control">
 
-            <label for="password" class="mt-3">Password</label>
-            <input type="password" name="password" class="form-control">
+            <label for="diachi_user" class="mt-3">Dia chi</label>
+            <input type="text" name="diachi_user" class="form-control">
 
-            <label for="address" class="mt-3">Address</label>
-            <input type="text" name="address" class="form-control">
+            <label for="sdt_user" class="mt-3">SDT</label>
+            <input type="text" name="sdt_user" class="form-control">
+
+            <label for="email_user" class="mt-3">Email</label>
+            <input type="email" name="email_user" class="form-control">
+
+            <label for="role" class="mt-3">Chuc nang</label>
+            <input type="text" name="role" class="form-control">
 
             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
             <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>

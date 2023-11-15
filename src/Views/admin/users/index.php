@@ -22,19 +22,22 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
+                <th>Pass</th>
                 <th>Address</th>
-                <th>Password</th>
-                <th>Action</th>
+                <th>SDT</th>
+                <th>Email</th>
+                <th>Role</th>
             </tr>
 
             <?php foreach ($users as $user) : ?>
                 <tr>
                     <td><?= $user['id'] ?></td>
-                    <td><?= $user['name'] ?></td>
-                    <td><?= $user['email'] ?></td>
-                    <td><?= $user['address'] ?></td>
-                    <td><?= $user['password'] ?></td>
+                    <td><?= $user['tk_user'] ?></td>
+                    <td><?= $user['pass_user'] ?></td>
+                    <td><?= $user['diachi_user'] ?></td>
+                    <td><?= $user['sdt_user'] ?></td>
+                    <td><?= $user['email_user'] ?></td>
+                    <td><?= $user['role'] ?></td>
                     <td>
                         <a href="/admin/users/update?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
                         

@@ -5,8 +5,8 @@ namespace Ductong\BaseMvc\Models;
 use Ductong\BaseMvc\Model;
 
 class Category extends Model {
-    protected $table = 'categories';
+    protected $table = 'danhmuc';
     protected $columns = [
-        'name',
+        'ten_dm',
     ];
 }
