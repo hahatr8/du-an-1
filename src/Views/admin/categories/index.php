@@ -28,7 +28,7 @@
             <?php foreach ($categories as $category) : ?>
                 <tr>
                     <td><?= $category['id'] ?></td>
-                    <td><?= $category['name'] ?></td>
+                    <td><?= $category['ten_dm'] ?></td>
                     <td>
                         <a href="/admin/categories/update?id=<?= $category['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
                         

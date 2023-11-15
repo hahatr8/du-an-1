@@ -17,17 +17,23 @@
         <h1>Cập nhật User</h1>
 
         <form action="" method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" value="<?= $user['name'] ?>">
+            <label for="tk_user">Name</label>
+            <input type="text" name="tk_user" class="form-control" value="<?= $user['tk_user'] ?>">
 
-            <label for="address" class="mt-3">Email</label>
-            <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
+            <label for="pass_user" class="mt-3">Pass</label>
+            <input type="password" name="pass_user" class="form-control" value="<?= $user['pass_user'] ?>">
 
-            <label for="password" class="mt-3">Password</label>
-            <input type="password" name="password" class="form-control" value="<?= $user['password'] ?>">
+            <label for="diachi_user" class="mt-3">Dia chi</label>
+            <input type="text" name="diachi_user" class="form-control" value="<?= $user['diachi_user'] ?>">
 
-            <label for="address" class="mt-3">Address</label>
-            <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">
+            <label for="sdt_user" class="mt-3">SDT</label>
+            <input type="text" name="sdt_user" class="form-control" value="<?= $user['sdt_user'] ?>">
+
+            <label for="email_user" class="mt-3">Email</label>
+            <input type="email" name="email_user" class="form-control" value="<?= $user['email_user'] ?>">
+
+            <label for="role" class="mt-3">Chuc nang</label>
+            <input type="text" name="role" class="form-control" value="<?= $user['role'] ?>">
 
             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
             <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
