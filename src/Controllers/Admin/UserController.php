@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index() {
         $users = (new User)->all();
         
-        $this->render('admin/users/index', ['users' => $users]);
+        $this->renderAdmin('users/index', ['users' => $users]);
     }
 
     public function create() {
@@ -32,7 +32,7 @@ class UserController extends Controller
             header('Location: /admin/users');
         }
 
-        $this->render('admin/users/create');
+        $this->renderAdmin('users/create');
     }
 
     public function update() {
@@ -55,7 +55,7 @@ class UserController extends Controller
 
         $user = (new User)->findOne($_GET['id']);
 
-        $this->render('admin/users/update', ['users' => $user]);
+        $this->renderAdmin('users/update', ['user' => $user]);
     }
 
     public function delete() {
@@ -68,3 +68,6 @@ class UserController extends Controller
         header('Location: /admin/users');
     }
 }
+
+
+
