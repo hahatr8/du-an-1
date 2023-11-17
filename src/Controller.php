@@ -8,4 +8,13 @@ class Controller {
 
         include "Views/$view.php";
     }
+
+    protected function renderAdmin($view, $data = []) {
+
+        $data['view'] = $view;
+
+        extract($data);
+
+        include "Views/admin/master.php";
+    }
 }
