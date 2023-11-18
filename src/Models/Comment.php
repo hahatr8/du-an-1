@@ -9,5 +9,6 @@ class Comment extends Model {
     protected $columns = [
         'ngaybinhluan',
         'noidung',
+        'idpro',
     ];
 }
