@@ -35,7 +35,7 @@
                 <tr>
                     <td><?= $item['id'] ?></td>
                     <td><?= $item['ten_sp'] ?></td>
-                    <td><?= $item['img_sp'] ?></td>
+                    <td><img src="/img/<?= $item['img_sp'] ?>" alt=""></td>
                     <td><?= $item['mota_sp'] ?></td>
                     <td><?= $item['gia_sp'] ?></td>
                     <td><?= $item['soluong_sp'] ?></td>
