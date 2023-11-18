@@ -27,7 +27,7 @@
 
             endforeach;
                 ?>
-            </select><br> 
+            </select><br>   
             
             <label for="name_sp">Name</label>
             <input type="text" name="ten_sp" class="form-control"><br>

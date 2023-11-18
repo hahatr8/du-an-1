@@ -42,9 +42,9 @@
                     <td><?= $item['luotxem'] ?></td>
                     <td><?= $item['id_dm'] ?></td>
                     <td>
-                    <a href="/admin/categories/update?id=<?= $category['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                    <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
                         
-                        <form action="/admin/categories/delete?id=<?= $category['id'] ?>" method="post">
+                        <form action="/admin/sanpham/delete?id=<?= $item['id'] ?>" method="post">
                             <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" 
                                                     class="btn btn-danger btn-sm">Xóa</button>
                         </form>

@@ -4,7 +4,6 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Sanpham;
-use Ductong\BaseMvc\Models\Category;
 
 class SanPhamController extends Controller
 {
