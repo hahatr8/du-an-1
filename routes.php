@@ -3,12 +3,16 @@
 use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\SanPhamController;
+use Ductong\BaseMvc\Controllers\Admin\CommentController;
+use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
 $router->addRoute('/', HomeController::class, 'index');
+
+$router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
@@ -24,3 +28,7 @@ $router->addRoute('/admin/sanpham', SanPhamController::class, 'index');
 $router->addRoute('/admin/sanpham/create', SanPhamController::class, 'create');
 $router->addRoute('/admin/sanpham/update', SanPhamController::class, 'update');
 $router->addRoute('/admin/sanpham/delete', SanPhamController::class, 'delete');
+$router->addRoute('/admin/comments', CommentController::class, 'index');
+$router->addRoute('/admin/comments/create', CommentController::class, 'create');
+$router->addRoute('/admin/comments/update', CommentController::class, 'update');
+$router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
