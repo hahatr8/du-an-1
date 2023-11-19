@@ -13,7 +13,7 @@ class SanPhamController extends Controller
     public function index() {
         $sanpham = (new Sanpham)->all();
         
-        $this->render('admin/sanpham/index', ['sanpham' => $sanpham]);
+        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham]);
     }
 
     public function create() {
@@ -35,7 +35,7 @@ class SanPhamController extends Controller
             header('Location: /admin/sanpham');
         }
 
-        $this->render('admin/sanpham/create');
+        $this->renderAdmin('sanpham/create');
     }
 
     public function update() {
@@ -58,7 +58,7 @@ class SanPhamController extends Controller
 
         $user = (new Sanpham)->findOne($_GET['id']);
 
-        $this->render('admin/sanpham/update', ['sanpham' => $user]);
+        $this->renderAdmin('sanpham/update', ['sanpham' => $user]);
     }
 
      public function delete() {
