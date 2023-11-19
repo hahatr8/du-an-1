@@ -52,8 +52,7 @@
                                                          <th>Giá</th>
                                                          <th>Số Lượng</th>
                                                          <th>Lượt xem</th>
-                                                         <th>Danh Mục</th>
-                                                         <th>Role</th>
+                                                         <th>Action</th>
                                                      </tr>
                                                  </thead>
                                                  <tbody>
@@ -66,7 +65,6 @@
                                                              <td><?= $item['gia_sp'] ?></td>
                                                              <td><?= $item['soluong_sp'] ?></td>
                                                              <td><?= $item['luotxem'] ?></td>
-                                                             <td><?= $item['id_dm'] ?></td>
                                                              <td>
                                                                  <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
