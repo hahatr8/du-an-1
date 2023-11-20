@@ -43,6 +43,13 @@
                                             <label for="name_sp">Name</label>
                                             <input type="text" name="ten_sp" class="form-control"><br>
 
+                                            <label for="id_dm">Danh Mục</label>
+                                            <select name="id_dm" class="form-control" id="id_dm">
+                                                <?php foreach ($categories as $category) : ?>
+                                                    <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
+                                                <?php endforeach; ?>
+                                            </select>
+                                            
                                             <label for="img_sp" class="mt-3">IMG</label>
                                             <input type="file" name="img_sp" class="form-control"><br>
 
@@ -54,7 +61,7 @@
 
                                             <label for="soluong_sp" class="mt-3">Số Lượng</label>
                                             <input type="text" name="soluong_sp" class="form-control"><br>
-                                            
+
                                             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                             <a href="/admin/sanpham" class="btn btn-primary mt-3">Quay lại d/s</a>
                                         </form>

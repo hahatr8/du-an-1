@@ -10,5 +10,6 @@ class Comment extends Model {
         'ngaybinhluan',
         'noidung',
         'idpro',
+        'id_user'
     ];
 }
