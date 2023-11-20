@@ -13,6 +13,6 @@ class Sanpham extends Model {
         'gia_sp',
         'soluong_sp',
         // 'luotxem',
-        // 'id_dm ',
+        'id_dm',
     ];
 }
