@@ -16,7 +16,13 @@ class SanphamController extends Controller
         $sanpham = (new Sanpham)->all();
         $categories = (new Category())->all();
         
-        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, 'categories'=> $categories]);
+        $arrayCategoryIdName = [];
+        foreach ($categories as $category) {
+            $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
+        }
+
+
+        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName]);
     }
 
     
@@ -34,6 +40,19 @@ class SanphamController extends Controller
                 // 'luotxem' => $_POST['luotxem'],
                 'id_dm' => $_POST['id_dm'],
             ];
+
+            $data['img'] = null;
+            $img = $_FILES['img'] ?? null;
+            if ($img) {
+
+                $pathSaveDB = '/img/' . $img['img_sp'];
+
+                $pathUpload = __DIR__ . '/../../../img/' . $img['img_sp'];
+
+                if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
+                    $data['img'] = $pathSaveDB;
+                } 
+            }
 
             (new Sanpham)->insert($data);
 

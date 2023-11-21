@@ -65,7 +65,7 @@
                                                              <td><?= $item['mota_sp'] ?></td>
                                                              <td><?= $item['gia_sp'] ?></td>
                                                              <td><?= $item['soluong_sp'] ?></td>
-                                                             <td><?= $item['id_dm'] ?></td>
+                                                             <td><?= $arrayCategoryIdName[$item['id']] ?></td>
                                                              <td><?= $item['luotxem'] ?></td>
                                                              <td>
                                                                  <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
