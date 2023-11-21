@@ -1,22 +1,25 @@
-<?php 
+<?php
 
 namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 
-class CategoryController extends Controller {
+class CategoryController extends Controller
+{
 
     /* Lấy danh sách */
-    public function index() {
+    public function index()
+    {
         $categories = (new Category())->all();
 
         $this->renderAdmin("categories/index", ["categories" => $categories]);
     }
 
     /* Thêm mới */
-    public function create() {
-        if (isset($_POST["btn-submit"])) { 
+    public function create()
+    {
+        if (isset($_POST["btn-submit"])) {
             $data = [
                 'ten_dm' => $_POST['ten_dm'],
             ];
@@ -30,9 +33,10 @@ class CategoryController extends Controller {
     }
 
     /* Cập nhật */
-    public function update() {
+    public function update()
+    {
 
-        if (isset($_POST["btn-submit"])) { 
+        if (isset($_POST["btn-submit"])) {
             $data = [
                 'ten_dm' => $_POST['ten_dm'],
             ];
@@ -50,7 +54,8 @@ class CategoryController extends Controller {
     }
 
     /* Xóa */
-    public function delete() {
+    public function delete()
+    {
         $conditions = [
             ['id', '=', $_GET['id']],
         ];
