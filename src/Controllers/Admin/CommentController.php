@@ -20,6 +20,7 @@ class CommentController extends Controller {
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => date('H:i d-m-y'),
+                'idpro' => $_POST['idpro'],
             ];
 
             (new Comment())->insert($data);
