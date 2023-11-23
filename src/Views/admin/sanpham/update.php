@@ -54,8 +54,9 @@
                                             <input type="text" name="ten_sp" class="form-control" value="<?= $sanpham['ten_sp'] ?>">
 
                                             <label for="address" class="mt-3">Img</label>
+                                            <img src="/../../../img/<?=$sanpham['img_sp'] ?>" alt="" width="100px">
                                             <input type="file" name="img_sp" class="form-control" value="<?= $sanpham['img_sp'] ?>">
-
+                                            
                                             <label for="mota_sp" class="mt-3">mota</label>
                                             <textarea name="mota_sp" id="" cols="30" rows="5" value="<?= $sampham['mota_sp'] ?>"></textarea>><br>
 
