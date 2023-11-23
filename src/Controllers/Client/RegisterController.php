@@ -9,36 +9,6 @@ use Ductong\BaseMvc\Models\Register;
 class RegisterController extends Controller
 {
 
-    // public function create()
-    // {
-    //     if (isset($_POST['button-submit'])) {
-    //         $data = [
-    //             'tk_user' => $_POST['tk_user'],
-    //             'pass_user' => password_hash($_POST['pass_user'], PASSWORD_DEFAULT),
-    //             'diachi_user' => $_POST['diachi_user'],
-    //             'sdt_user' => $_POST['sdt_user'],
-    //             'email_user' => $_POST['email_user'],
-    //             'role' => 1,
-    //         ];
-
-    //         $registerModel = new Register();
-    //         $userExists = $registerModel->exists($_POST['tk_user']);
-
-    //         if ($userExists) {
-    //             echo '<script>';
-    //             echo 'alert("Người dùng đã tồn tại! Vui lòng kiểm tra lại thông tin.");';
-
-    //             echo '</script>';
-    //             $this->render('client/register');
-    //         } else {
-    //             $registerModel->insert($data);
-    //             header('Location: /');
-    //         }
-    //     } else {
-    //         $this->render('client/register');
-    //     }
-    // }
-
 
     public function create()
     {

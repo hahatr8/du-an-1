@@ -17,7 +17,7 @@ class Register extends Model
     ];
 
 
-    // kieemr
+    // kiểm tra tk tồn tại hay chưa?
     public function exists($tk_user)
     {
         $sql = "SELECT COUNT(*) FROM taikhoan WHERE tk_user = :tk_user";
