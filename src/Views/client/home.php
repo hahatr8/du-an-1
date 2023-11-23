@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <H1>ĐÂY LÀ TRANG CHỦ</H1>
+    <H1>ĐÂY LÀ TRANG CHỦ!!</H1>
 </body>
 
 </html>
