@@ -5,6 +5,7 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Sanpham;
+use Ductong\BaseMvc\Models\User;
 
 class SanphamController extends Controller
 {
@@ -36,7 +37,7 @@ class SanphamController extends Controller
                 'mota_sp' => $_POST['mota_sp'],
                 'gia_sp' => $_POST['gia_sp'],
                 'soluong_sp' => $_POST['soluong_sp'],
-                'luotxem' => 0,
+                // 'luotxem' => 0,
                 'id_dm' => $_POST['id_dm'],
             ];
 
@@ -58,13 +59,15 @@ class SanphamController extends Controller
             header('Location: /admin/sanpham');
         }
 
-        $categories = (new Category())->all();
-        $this->renderAdmin('sanpham/create', ['categories'=> $categories]);
+        $sanphams = (new Sanpham())->all();
+        $this->renderAdmin('sanpham/create', ['sanpham'=> $sanphams]);
     }
 
 
     public function update()
-    {
+    {   
+        $user = (new Sanpham)->findOne($_GET['id']);
+
         if (isset($_POST['btn-submit'])) {
             $data = [
                 'ten_sp' => $_POST['ten_sp'],
@@ -72,6 +75,8 @@ class SanphamController extends Controller
                 'mota_sp' => $_POST['mota_sp'],
                 'gia_sp' => $_POST['gia_sp'],
                 'soluong_sp' => $_POST['soluong_sp'],
+                // 'luotxem' => $user['luotxem'],
+                'id_dm' => $_POST['id_dm'],
             ];
 
             $data['img'] = $_POST['img_sp'];
@@ -93,6 +98,8 @@ class SanphamController extends Controller
                 ['id', '=', $_GET['id']]
             ];
 
+            (new Sanpham)->update($data, $conditions);
+
             if ($flag) {
 
                 // Xóa file dùng hàm unlink 
@@ -101,12 +108,13 @@ class SanphamController extends Controller
                 unlink($pathFile);
             }
 
-            (new Sanpham)->update($data, $conditions);
+            
         }
 
-        $user = (new Sanpham)->findOne($_GET['id']);
+        $categories = (new Category())->all();
+        $sanpham = (new Sanpham())->findOne($_GET["id"]);
 
-        $this->renderAdmin('sanpham/update', ['sanpham' => $user]);
+        $this->renderAdmin('sanpham/update', ['sanpham' => $sanpham, "categories" => $categories]);
     }
 
     public function delete()

@@ -20,7 +20,7 @@ class CommentController extends Controller {
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => date('H:i d-m-y'),
-                'idpro' => $_POST['idpro'],
+                // 'idpro' => $_POST['idpro'],
             ];
 
             (new Comment())->insert($data);
@@ -34,10 +34,12 @@ class CommentController extends Controller {
     /* Cập nhật */
     public function update() {
 
+        $Comment = (new Comment())->findOne($_GET["id"]);
+
         if (isset($_POST["btn-submit"])) { 
             $data = [
                 'noidung' => $_POST['noidung'],
-                'ngaybinhluan' => date('H:i d-m-y')
+                'ngaybinhluan' => $Comment['ngaybinhluan'],
             ];
 
             $conditions = [
@@ -46,8 +48,6 @@ class CommentController extends Controller {
 
             (new Comment())->update($data, $conditions);
         }
-
-        $Comment = (new Comment())->findOne($_GET["id"]);
 
         $this->renderAdmin("Comments/update", ["Comment" => $Comment]);
     }
