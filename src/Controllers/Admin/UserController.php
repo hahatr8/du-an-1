@@ -5,7 +5,7 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\User;
 
-$_SESSION['user'] = $_POST['tk_user']['pass_user'];
+// $_SESSION['user'] = $_POST['tk_user']['pass_user'];
 class UserController extends Controller
 {
     /*
@@ -73,19 +73,4 @@ class UserController extends Controller
         header('Location: /admin/users');
     }
 
-    public function login()
-    {
-
-        $users = (new User)->all();
-
-        'tk_user' == password_hash('pass_user', PASSWORD_DEFAULT);
-        $storedHashPassword = '$2y$10$doxeLe7JO9t14DE.iMlaXeTLZknt38qzsVhZZKNIGhEj1ThMKFTn';
-
-        if (password_verify('tk_user', $storedHashPassword)) {
-            echo "Login thành công";
-        } else {
-            echo "Truy cập trái phép";
-        }
-        $this->renderAdmin('users/index', ['users' => $users]);
-    }
 }

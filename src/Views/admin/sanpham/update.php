@@ -40,6 +40,16 @@
 
                                     <div class="card-block">
                                         <form action="" method="post">
+
+                                            <input type="hidden" name="id" value="<?= $sanpham['id'] ?>">
+
+                                            <label for="id_dm">Danh Mục</label>
+                                            <select name="id_dm" class="form-control" id="id_dm">
+                                                <?php foreach ($categories as $category) : ?>
+                                                    <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
+                                                <?php endforeach; ?>
+                                            </select>
+
                                             <label for="name">Name</label>
                                             <input type="text" name="ten_sp" class="form-control" value="<?= $sanpham['ten_sp'] ?>">
 
