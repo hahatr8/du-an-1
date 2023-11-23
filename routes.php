@@ -6,7 +6,8 @@ use Ductong\BaseMvc\Controllers\Admin\SanphamController;
 use Ductong\BaseMvc\Controllers\Admin\CommentController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
-use Ductong\BaseMvc\Controllers\Client\HomeController;
+use Ductong\BaseMvc\Controllers\Client\HomeController;  
+// use Ductong\BaseMvc\Controllers\Client\LoadSPController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -39,3 +40,6 @@ $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
+
+//client
+// $router->addRoute('/client/trangchu', LoadSPController::class, 'loadAll');
