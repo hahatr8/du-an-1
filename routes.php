@@ -6,10 +6,17 @@ use Ductong\BaseMvc\Controllers\Admin\SanphamController;
 use Ductong\BaseMvc\Controllers\Admin\CommentController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
+use Ductong\BaseMvc\Controllers\Client\RegisterController;
+
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
+
+
+$router->addRoute('/register', RegisterController::class, 'create');
+
+
 
 $router->addRoute('/', HomeController::class, 'index');
 
