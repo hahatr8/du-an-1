@@ -39,26 +39,31 @@
                                 <div class="card">
 
                                     <div class="card-block">
-                                        <form action="" method="post">
+                                        <form action="" method="post" enctype="multipart/form-data">
 
                                             <input type="hidden" name="id" value="<?= $sanpham['id'] ?>">
 
                                             <label for="id_dm">Danh Mục</label>
-                                            <select name="id_dm" class="form-control" id="id_dm">
+                                            <select name="id_dm" id="id_dm" class="form-control">
                                                 <?php foreach ($categories as $category) : ?>
-                                                    <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
+                                                    <option <?= $sanpham['id_dm'] == $category['id'] ? 'selected' : '' ?> value="<?= $category['id'] ?>">
+
+                                                        <?= $category['ten_dm'] ?>
+
+                                                    </option>
                                                 <?php endforeach; ?>
                                             </select>
 
                                             <label for="name">Name</label>
                                             <input type="text" name="ten_sp" class="form-control" value="<?= $sanpham['ten_sp'] ?>">
 
-                                            <label for="address" class="mt-3">Img</label>
-                                            <input type="file" name="img_sp" class="form-control" value="<?= $sanpham['img_sp'] ?>">
+                                            <label for="img_sp" class="mt-3">Img</label>
+                                            <input type="file" name="img" id="img_sp" class="form-control">
+                                            <input type="hidden" name="img_current" id="img_current" class="form-control" value="<?= $sanpham['img_sp'] ?>">
+                                            <img src="<?= $sanpham['img_sp'] ?>" alt="" height="100px" width="120px"> <br>
 
-                                            <label for="mota_sp" class="mt-3">mota</label>
-                                            <textarea name="mota_sp" id="" cols="30" rows="5" value="<?= $sampham['mota_sp'] ?>"></textarea>><br>
-
+                                            <label for="mota_sp" class="mt-3">mota</label> <br>
+                                            <textarea name="mota_sp" id="mota_sp" class="form-control"><?= $sanpham['mota_sp'] ?></textarea>
 
                                             <label for="gia_sp" class="mt-3">giá</label>
                                             <input type="text" name="gia_sp" class="form-control" value="<?= $sanpham['gia_sp'] ?>">
