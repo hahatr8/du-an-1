@@ -23,6 +23,17 @@ class RegisterController extends Controller
                 return;
             }
 
+
+            $username = $_POST['tk_user'];
+            if (strpos($username, ' ') !== false) {
+                echo '<script>';
+                echo 'alert("Tên đăng nhập không được chưa dấu cách!");';
+                echo '</script>';
+                $this->render('client/register');
+                return;
+            } else {
+            }
+
             $data = [
                 'tk_user' => $_POST['tk_user'],
                 'pass_user' => password_hash($password, PASSWORD_DEFAULT),
