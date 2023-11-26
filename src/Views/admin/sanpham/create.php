@@ -39,7 +39,7 @@
                                 <div class="card">
 
                                     <div class="card-block">
-                                        <form action="" method="post">
+                                        <form action="" method="post" enctype="multipart/form-data">
                                             <label for="name_sp">Name</label>
                                             <input type="text" name="ten_sp" class="form-control"><br>
 
