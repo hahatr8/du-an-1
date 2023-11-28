@@ -73,19 +73,4 @@ class UserController extends Controller
         header('Location: /admin/users');
     }
 
-    public function login()
-    {
-
-        $users = (new User)->all();
-
-        'tk_user' == password_hash('pass_user', PASSWORD_DEFAULT);
-        $storedHashPassword = '$2y$10$doxeLe7JO9t14DE.iMlaXeTLZknt38qzsVhZZKNIGhEj1ThMKFTn';
-
-        if (password_verify('tk_user', $storedHashPassword)) {
-            echo "Login thành công";
-        } else {
-            echo "Truy cập trái phép";
-        }
-        $this->renderAdmin('users/index', ['users' => $users]);
-    }
 }

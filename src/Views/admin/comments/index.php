@@ -41,7 +41,7 @@
                                 
                                     <div class="card-block">
                                         <div class="dt-responsive table-responsive">
-                                            <table class="table" id="simpletable">
+                                            <table class="table table-striped table-bordered nowrap" id="simpletable">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>

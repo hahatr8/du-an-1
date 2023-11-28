@@ -41,12 +41,11 @@
 
                                     <div class="card-block">
                                         <div class="dt-responsive table-responsive">
-                                            <table class="table" id="simpletable">
+                                            <table class="table table-striped table-bordered nowrap" id="simpletable">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Name</th>
-                                                        <th>Pass</th>
                                                         <th>Address</th>
                                                         <th>SDT</th>
                                                         <th>Email</th>
@@ -59,7 +58,6 @@
                                                         <tr>
                                                             <td><?= $user['id'] ?></td>
                                                             <td><?= $user['tk_user'] ?></td>
-                                                            <td><?= $user['pass_user'] ?></td>
                                                             <td><?= $user['diachi_user'] ?></td>
                                                             <td><?= $user['sdt_user'] ?></td>
                                                             <td><?= $user['email_user'] ?></td>
