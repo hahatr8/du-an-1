@@ -42,7 +42,7 @@
 
                                      <div class="card-block">
                                          <div class="dt-responsive table-responsive">
-                                             <table class="table" id="simpletable">
+                                             <table class="table table-striped table-bordered nowrap" id="simpletable">
                                                  <thead>
                                                      <tr>
                                                          <th>ID</th>
@@ -51,7 +51,9 @@
                                                          <th>Mô Tả</th>
                                                          <th>Giá</th>
                                                          <th>Số Lượng</th>
-                                                         <th>ID danh mục</th>
+                                                         <th>Tên danh mục</th>
+                                                         <th>Tên Color</th>
+                                                         <th>Tên Size</th>
                                                          <th>Lượt xem </th>
                                                          <th>Action </th>
                                                      </tr>
@@ -59,19 +61,22 @@
                                                  <tbody>
                                                      <?php foreach ($sanpham as $item) : ?>
                                                          <tr>
+                    
                                                              <td><?= $item['id'] ?></td>
                                                              <td><?= $item['ten_sp'] ?></td>
-                                                             <td><img src="/img/<?= $item['img_sp'] ?>" alt="" height="50px" width="50px"></td>
+                                                             <td><img src="<?= $item['img_sp'] ?>" alt="" height="50px" width="50px"></td>
                                                              <td><?= $item['mota_sp'] ?></td>
                                                              <td><?= $item['gia_sp'] ?></td>
                                                              <td><?= $item['soluong_sp'] ?></td>
-                                                             <td><?= $arrayCategoryIdName[$item['id']] ?></td>
+                                                             <td><?= $arrayCategoryIdName[$item['id_dm']] ?></td>
+                                                             <td><input type="color" value="<?= $arrayColorIdName[$item['id_color']] ?> ?>" disabled></td>
+                                                             <td><?= $arrayColorIdName[$item['id_size']] ?></td>
                                                              <td><?= $item['luotxem'] ?></td>
                                                              <td>
-                                                                 <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                                 <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm mt-2">Cập nhật</a>
 
                                                                  <form action="/admin/sanpham/delete?id=<?= $item['id'] ?>" method="post">
-                                                                     <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                                     <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                                  </form>
                                                              </td>
                                                          </tr>

@@ -5,6 +5,9 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Sanpham;
+use Ductong\BaseMvc\Models\Color;
+use Ductong\BaseMvc\Models\Size;
+
 
 class SanphamController extends Controller
 {
@@ -13,19 +16,32 @@ class SanphamController extends Controller
     */
     public function index()
     {
-        $sanpham = (new Sanpham)->all();
+        $sanpham = (new Sanpham())->all();
         $categories = (new Category())->all();
-        
+        $color = (new Color())->all();
+        $size = (new Size())->all();
+
+
         $arrayCategoryIdName = [];
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
         }
 
+        $arrayColorIdName = [];
+        foreach ($color as $mau) {
+            $arrayColorIdName[$mau['id']] = $mau['ten_color'];
+        }
 
-        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName]);
+        $arraySizeIdName = [];
+        foreach ($size as $item) {
+            $arraySizeIdName[$item['id']] = $item=['ten_size'];
+        }
+
+        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName, "arrayColorIdName" => $arrayColorIdName,"arraySizeIdName" => $arraySizeIdName ]);
     }
 
-    
+
+
 
     public function create()
     {
@@ -36,77 +52,81 @@ class SanphamController extends Controller
                 'mota_sp' => $_POST['mota_sp'],
                 'gia_sp' => $_POST['gia_sp'],
                 'soluong_sp' => $_POST['soluong_sp'],
-                'luotxem' => 0,
+                'luotxem' => $_POST['luotxem'],
                 'id_dm' => $_POST['id_dm'],
             ];
 
-            $data['img'] = null;
+            $data['img_sp'] = null;
             $img = $_FILES['img'] ?? null;
             if ($img) {
 
-                $pathSaveDB = '/img/' . $img['img_sp'];
+                $pathSaveDB = '/uploads/' . $img['name'];
 
-                $pathUpload = __DIR__ . '/../../../img/' . $img['img_sp'];
+                $pathUpload = __DIR__ . '/../../../uploads/' . $img['name'];
 
-                if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
-                    $data['img'] = $pathSaveDB;
-                } 
+                if (move_uploaded_file($img['tmp_name'], $pathUpload)) {
+                    $data['img_sp'] = $pathSaveDB;
+                }
             }
 
-            (new Sanpham)->insert($data);
+            (new Sanpham())->insert($data);
 
             header('Location: /admin/sanpham');
         }
-
         $categories = (new Category())->all();
-        $this->renderAdmin('sanpham/create', ['categories'=> $categories]);
+        $this->renderAdmin('sanpham/create', ["categories" => $categories]);
     }
+
+
 
 
     public function update()
     {
+
+        $sanpham = (new Sanpham())->findOne($_GET['id']);
+
         if (isset($_POST['btn-submit'])) {
             $data = [
                 'ten_sp' => $_POST['ten_sp'],
-                'img_sp' => $_POST['img_sp'],
                 'mota_sp' => $_POST['mota_sp'],
                 'gia_sp' => $_POST['gia_sp'],
                 'soluong_sp' => $_POST['soluong_sp'],
+                'luotxem' => $sanpham['luotxem'],
+                'id_dm' => $_POST['id_dm'],
             ];
 
-            $data['img'] = $_POST['img_sp'];
+            $data['img_sp'] = $_POST['img_current'];
             $img = $_FILES['img'] ?? null;
             $flag = false;
             if ($img) {
 
-                $pathSaveDB = '/img/' . $img['img_sp'];
+                $pathSaveDB = '/uploads/' . $img['name'];
+                $pathUpload = __DIR__ . '/../../../uploads/' . $img['name'];
 
-                $pathUpload = __DIR__ . '/../../../img/' . $img['img_sp'];
-
-                if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
-                    $data['img'] = $pathSaveDB;
+                if (move_uploaded_file($img['tmp_name'], $pathUpload)) {
+                    $data['img_sp'] = $pathSaveDB;
                     $flag = true;
-                } 
+                }
             }
-
+            
             $conditions = [
                 ['id', '=', $_GET['id']]
             ];
+
+            (new Sanpham())->update($data, $conditions);
 
             if ($flag) {
 
                 // Xóa file dùng hàm unlink 
                 // Path file cũng phải giống như $pathUpload
-                $pathFile = __DIR__ .'/../../..'. $_POST['img_sp'];
+                $pathFile = __DIR__ . '/../../..' . $_POST['img_current'];
                 unlink($pathFile);
             }
-
-            (new Sanpham)->update($data, $conditions);
         }
+        $categories = (new Category())->all();
+        $sanpham = (new Sanpham())->findOne($_GET["id"]);
 
-        $user = (new Sanpham)->findOne($_GET['id']);
-
-        $this->renderAdmin('sanpham/update', ['sanpham' => $user]);
+        $this->renderAdmin('sanpham/update', ['sanpham' => $sanpham, "categories" => $categories]);
     }
 
     public function delete()
@@ -117,19 +137,9 @@ class SanphamController extends Controller
 
         (new Sanpham)->delete($conditions);
 
-        header('Location: /admin/sanpham');
-    }
+        $pathFile = __DIR__ . '/../../..' . $_POST['img'];
+        unlink($pathFile);
 
-    public function detailSp()
-    {
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            global $stmt;
-            $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE id = $id";
-            $stmt->query($sql);
-        } else {
-            echo "loi";
-        }
-        $this->renderAdmin('sanpham/index', ['sanpham' => $id]);
+        header('Location: /admin/sanpham');
     }
 }

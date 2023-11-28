@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Comments</h5>
+                        <h5>Size</h5>
                     </div>
                 </div>
             </div>
@@ -16,22 +16,21 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Comments</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Size</a> </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="pcoded-inner-content">
         <div class="main-body">
             <div class="page-wrapper">
                 <div class="page-body">
 
-                    
+
                     <div class="card">
                         <div class="card-header">
-                            <h5>Thêm mới bình luận</h5>
+                            <h5>Cập nhật Size</h5>
                         </div>
 
                         <div class="row">
@@ -40,17 +39,16 @@
 
                                     <div class="card-block">
                                         <form action="" method="post">
-                                            <label for="name">Comment</label>
-                                            <input type="text" name="noidung" class="form-control" required>
+                                            <label for="name">Name</label>
+                                            <input type="text" name="ten_size" class="form-control" value="<?= $size['ten_size']  ?> ">
 
                                             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-                                            <a href="/admin/comments" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                            <a href="/admin/size" class="btn btn-primary mt-3">Quay lại d/s</a>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>

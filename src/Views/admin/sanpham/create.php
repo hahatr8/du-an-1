@@ -40,8 +40,11 @@
 
                                     <div class="card-block">
                                         <form action="" method="post" enctype="multipart/form-data">
-                                            <label for="name_sp">Name</label>
-                                            <input type="text" name="ten_sp" class="form-control"><br>
+
+                                            <input type="hidden" name="luotxem" value="0" class="form-control">
+
+                                            <label for="ten_sp">Name</label>
+                                            <input type="text" name="ten_sp" id="ten_sp" class="form-control" required><br>
 
                                             <label for="id_dm">Danh Mục</label>
                                             <select name="id_dm" class="form-control" id="id_dm">
@@ -49,18 +52,18 @@
                                                     <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
                                                 <?php endforeach; ?>
                                             </select>
-                                            
-                                            <label for="img_sp" class="mt-3">IMG</label>
-                                            <input type="file" name="img_sp" class="form-control"><br>
+
+                                            <label for="img_sp">Img</label>
+                                            <input type="file" name="img" id="img_sp" class="form-control" required>
 
                                             <label for="mota_sp" class="mt-3">Mô Tả</label>
-                                            <textarea name="mota_sp" id="" cols="30" rows="5"></textarea>><br>
+                                            <textarea name="mota_sp" class="form-control"></textarea><br>
 
                                             <label for="gia_sp" class="mt-3">Giá</label>
-                                            <input type="text" name="gia_sp" class="form-control"><br>
+                                            <input type="number" name="gia_sp" class="form-control" required><br>
 
                                             <label for="soluong_sp" class="mt-3">Số Lượng</label>
-                                            <input type="text" name="soluong_sp" class="form-control"><br>
+                                            <input type="number" name="soluong_sp" class="form-control" required><br>
 
                                             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                             <a href="/admin/sanpham" class="btn btn-primary mt-3">Quay lại d/s</a>

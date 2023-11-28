@@ -32,6 +32,24 @@
                 </li>
 
                 <li class>
+                    <a href="/admin/color" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-gitlab"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý color</span>
+                    </a>
+                </li>
+
+                <li class>
+                    <a href="/admin/size" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-gitlab"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý Size</span>
+                    </a>
+                </li>
+
+                <li class>
                     <a href="/admin/comments" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-aperture rotate-refresh"></i>
