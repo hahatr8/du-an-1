@@ -21,6 +21,11 @@ class LoginController extends Controller
 
             if ($isLoggedIn) {
                 header('Location: /');
+                $this->render('client/register');
+
+
+
+
                 exit;
             } else {
                 echo '<script>';

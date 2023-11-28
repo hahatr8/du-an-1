@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="thetarget">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trang Chủ</a>
+                        <a class="nav-link" href="home.php">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Giới Thiệu</a>
@@ -96,6 +96,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
