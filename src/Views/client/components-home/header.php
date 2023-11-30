@@ -26,7 +26,7 @@
         </li>
         <li><a href="">NEW ARRiVAL</a></li>
         <li><a href="">Tra cứu đơn hàng</a></li>
-        <li><a href="/src/Views/client/shop.php">Cửa hàng</a></li>
+        <li><a href="/shop">Cửa hàng</a></li>
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
