@@ -31,11 +31,33 @@
             <h6>Home/T-Shirt</h6>
             <h4>Quần short</h4>
             <h2>$122</h2>
-            <div class="radio">
-                <h6>Màu sắc</h6>
-                <input type="radio" name="mau" id="mautrang" value="Màu trắng" data-vhandle="trang">
-                <input type="radio" name="mau" id="mauden" value="Màu Đen">
-                <input type="radio" name="mau" id="mauxanhnuocbien" value="Màu xanh nước biển">
+            <div class="form-radio m-b-30">
+                <form>
+                    <div class="radio radio-matrial radio-primary radio-inline">
+                        <label>
+                            <input type="radio" name="radio" checked="checked">
+                            <i class="helper"></i>Primary Color
+                        </label>
+                    </div>
+                    <div class="radio radio-matrial radio-success radio-inline">
+                        <label>
+                            <input type="radio" name="radio" checked="checked">
+                            <i class="helper"></i>Success Color
+                        </label>
+                    </div>
+                    <div class="radio radio-matrial radio-info radio-inline">
+                        <label>
+                            <input type="radio" name="radio" checked="checked">
+                            <i class="helper"></i>Info Color
+                        </label>
+                    </div>
+                    <div class="radio radio-matrial radio-warning radio-inline">
+                        <label>
+                            <input type="radio" name="radio" checked="checked">
+                            <i class="helper"></i>Warning Color
+                        </label>
+                    </div>
+                </form>
             </div>
             <div class="radio">
                 <h6>Kích thước</h6>

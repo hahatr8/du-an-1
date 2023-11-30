@@ -3,13 +3,13 @@
         <a href="/src/Views/client/home.php"><img src="/assets/client//assets/img/logo.jpg"></a>
     </div>
     <div class="menu">
+    <?php foreach ($categories as $categorie) : ?>
         <li><a href="">Bé gái <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
-                <li><a href="">QUẦN</a></li>
-                <li><a href="">ÁO</a></li>
-                <li><a href="">ĐỒ BỘ</a></li>
+                <li><a href=""><?=$categorie['ten_dm'] ?></a></li>
             </ul>
         </li>
+        <?php endforeach ?>
         <li><a href="">Bé trai <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
                 <li><a href="">QUẦN</a></li>

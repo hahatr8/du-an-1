@@ -17,20 +17,50 @@ class Sanpham extends Model
         'id_dm',
     ];
 
-    // public function detailSp()
-    // {
-    //     if (isset($_GET['id'])) {
-    //         $id = $_GET['id'];
-    //         $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE id = $id";
-    //         $stmt = $this->conn->prepare($sql);
+    public function product1() {
+            $sql = "
+                SELECT 
+                    p.name p_name,
+                    p.price p_price,
+                    p.price_sale p_price_sale,
+                    p.img p_img,
+                    c.id c_id,
+                    c.name c_name
+                FROM products p 
+            ";
+    
+            $stmt = $this->conn->prepare($sql);
+    
+            $stmt->execute();
+    
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+    
+            return $stmt->fetchAll();
+        }
 
-    //         $stmt->execute();
+    // public function getLatestLimit10() {
+    //     $sql = "
+    //         SELECT 
+    //             p.name p_name,
+    //             p.price p_price,
+    //             p.price_sale p_price_sale,
+    //             p.img p_img,
+    //             c.id c_id,
+    //             c.name c_name
+    //         FROM products p 
+    //         JOIN categories c
+    //             ON p.category_id = c.id
+    //         WHERE p.is_active = 1
+    //         ORDER BY p.id DESC
+    //         LIMIT 10
+    //     ";
 
-    //         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+    //     $stmt = $this->conn->prepare($sql);
 
-    //     } else {
-    //         echo "loi";
-    //     }
+    //     $stmt->execute();
+
+    //     $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
     //     return $stmt->fetchAll();
     // }
 }

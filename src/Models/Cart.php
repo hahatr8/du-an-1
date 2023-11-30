@@ -14,11 +14,6 @@ class Cart extends Model
         'gia_sp',
     ];
 
-    public function getItems($items)
-    {
-        
-    }
-
     public function getTotalPrice($items)
     {
         $thanhtien = 0;

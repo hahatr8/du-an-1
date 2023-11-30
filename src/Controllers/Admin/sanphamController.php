@@ -25,9 +25,6 @@ class SanphamController extends Controller
         $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName]);
     }
 
-
-
-
     public function create()
     {
 

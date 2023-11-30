@@ -8,6 +8,7 @@ use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\RegisterController;
 
+
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\LoginController;
 use Ductong\BaseMvc\Router;
@@ -21,12 +22,10 @@ $router->addRoute('/login', LoginController::class, 'login');
 
 
 
-
-$router->addRoute('/', HomeController::class, 'index');
+$router->addRoute('/client/home', HomeController::class, 'index');
 
 $router->addRoute('/cart', CartController::class, 'index');
 $router->addRoute('/cart/delete', CartController::class, 'delete');
-
 
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
@@ -50,3 +49,4 @@ $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
+
