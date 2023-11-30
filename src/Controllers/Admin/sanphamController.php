@@ -14,9 +14,9 @@ class SanphamController extends Controller
     */
     public function index()
     {
-        $sanpham = (new Sanpham())->all();
+       $sanpham = (new SanPham())->all();
         $categories = (new Category())->all();
-
+ 
         $arrayCategoryIdName = [];
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
@@ -93,7 +93,7 @@ class SanphamController extends Controller
                     $flag = true;
                 }
             }
-            
+
             $conditions = [
                 ['id', '=', $_GET['id']]
             ];
