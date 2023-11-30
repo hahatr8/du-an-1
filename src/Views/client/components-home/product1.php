@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<?php require_once 'components-home/head.php' ?>
-
-<body>
-
-    <?php require_once 'components-home/header.php' ?>
-
-    <?php require_once 'components-home/slider.php' ?>
-
-    <?php require_once 'components-home/fearure.php' ?>
-
-    <?php require_once 'components-home/product1.php' ?>
-
-    <?php require_once 'components-home/banner.php' ?>
-
-    
-
-    <div id="product1" class="section-p1">
-        <h2>Sản phẩm mới về</h2>
+<div id="product1" class="section-p1">
+        <h2>Sản phẩm nổi bật</h2>
         <p>Bộ sưu tập thiết kế hiện đại</p>
         <div class="pro-container">
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/src/Views/client/sproduct.php';">
                 <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -151,10 +132,3 @@
             </div>
         </div>
     </div>
-
-    <?php require_once 'components-home/foot.php' ?>
-
-</body>
-<script src="/assets/client//assets/js/slider.js"></script>
-
-</html>
