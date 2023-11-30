@@ -31,8 +31,8 @@
     </div>
     <div class="others">
         <li><input type="search" placeholder="Tìm kiếm"><i class="feather icon-search"></i></li>
-        <li><a href="" class="feather icon-user"></a></li>
-        <li><a href="" class="feather icon-shopping-cart"></a></li>
+        <li><a href="http://du-an-1.test/login" class="feather icon-user"></a></li>
+        <li><a href="http://du-an-1.test/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out"></a></li>
     </div>
 </div>
