@@ -26,13 +26,13 @@
         </li>
         <li><a href="">NEW ARRiVAL</a></li>
         <li><a href="">Tra cứu đơn hàng</a></li>
-        <li><a href="/src/Views/client/shop.php">Cửa hàng</a></li>
+        <li><a href="/shop">Cửa hàng</a></li>
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
         <li><input type="search" placeholder="Tìm kiếm"><i class="feather icon-search"></i></li>
-        <li><a href="" class="feather icon-user"></a></li>
-        <li><a href="" class="feather icon-shopping-cart"></a></li>
+        <li><a href="http://du-an-1.test/login" class="feather icon-user"></a></li>
+        <li><a href="http://du-an-1.test/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out"></a></li>
     </div>
 </div>

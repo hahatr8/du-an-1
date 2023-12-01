@@ -21,5 +21,132 @@
             <?php endforeach ?>
         </div>
 
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
+        <div class="pro">
+            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
+            <div class="des">
+                <span>adidas</span>
+                <h5>Quần short</h5>
+                <div class="star">
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                    <i class="feather icon-star-on"></i>
+                </div>
+                <h4>$123</h4>
+            </div>
+            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
+        </div>
     </div>
 </div>

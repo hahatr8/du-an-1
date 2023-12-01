@@ -39,4 +39,22 @@ class Login extends Model
         // Xác thực thất bại
         return false;
     }
+    public function getIdByName($username)
+    {
+        $query = "SELECT id FROM {$this->table} WHERE tk_user = :username";
+        $params = [
+            ':username' => $username
+        ];
+
+        $statement = $this->conn->prepare($query);
+        $statement->execute($params);
+
+        $result = $statement->fetch();
+
+        if ($result) {
+            return $result['id'];
+        } else {
+            return null;
+        }
+    }
 }

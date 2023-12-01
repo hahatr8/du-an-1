@@ -18,5 +18,15 @@ class HomeController extends Controller
         $categories = (new Category())->all();
 
         $this->render('client/home', ['sanpham' => $product1, "categories" => $categories]);
+
+        // $sanphamModel = new Sanpham();
+        // $danhSachSanPham = $sanphamModel->getAll();
+
+
+        // $data = [
+        //     'danhSachSanPham' => $danhSachSanPham
+        // ];
+
+        // return $this->render('client/shop', $data);
     }
 }

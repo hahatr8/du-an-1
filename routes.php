@@ -11,6 +11,8 @@ use Ductong\BaseMvc\Controllers\Client\RegisterController;
 
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\LoginController;
+use Ductong\BaseMvc\Controllers\Client\OrderController;
+use Ductong\BaseMvc\Controllers\Client\ShopController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -19,13 +21,26 @@ $router = new Router();
 $router->addRoute('/register', RegisterController::class, 'create');
 
 $router->addRoute('/login', LoginController::class, 'login');
+$router->addRoute('/order', OrderController::class, 'order');
+$router->addRoute('/shop', ShopController::class, 'allProduct');
 
 
 
-$router->addRoute('/client/home', HomeController::class, 'index');
+
+
+
+
+
+$router->addRoute('/home', HomeController::class, 'index');
 
 $router->addRoute('/cart', CartController::class, 'index');
 $router->addRoute('/cart/delete', CartController::class, 'delete');
+$router->addRoute('/cart/updateQuantity', CartController::class, 'updateQuantity');
+$router->addRoute('/session_destroy', CartController::class, ' session_destroy');
+
+
+
+
 
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
