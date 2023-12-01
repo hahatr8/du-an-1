@@ -8,7 +8,9 @@ use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\RegisterController;
 
+
 use Ductong\BaseMvc\Controllers\Client\HomeController;
+use Ductong\BaseMvc\Controllers\Client\SproductController;
 use Ductong\BaseMvc\Controllers\Client\LoginController;
 use Ductong\BaseMvc\Controllers\Client\OrderController;
 use Ductong\BaseMvc\Controllers\Client\ShopController;
@@ -27,17 +29,17 @@ $router->addRoute('/shop', ShopController::class, 'allProduct');
 
 
 
-
-
+$router->addRoute('/sproduct', SproductController::class, 'index');
 
 
 $router->addRoute('/', HomeController::class, 'index');
+
+
 
 $router->addRoute('/cart', CartController::class, 'index');
 $router->addRoute('/cart/delete', CartController::class, 'delete');
 $router->addRoute('/cart/updateQuantity', CartController::class, 'updateQuantity');
 $router->addRoute('/session_destroy', CartController::class, ' session_destroy');
-
 
 
 
@@ -65,3 +67,4 @@ $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
+

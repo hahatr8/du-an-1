@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <?php require_once 'components-home/head.php' ?>
 
 <body>

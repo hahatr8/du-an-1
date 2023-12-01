@@ -19,7 +19,7 @@
             <div class="pro-container">
                 <?php foreach ($danhSachSanPham as $sanpham): ?>
 
-                    <div class="pro" onclick="window.location.href='/login';">
+                    <div class="pro" onclick="window.location.href='/sproduct?id_sp=<?= $sanpham['id'] ?>';">
                         <img src="<?= $sanpham['img_sp'] ?>" alt="">
 
                         <div class="des">
@@ -32,7 +32,7 @@
                                 <i class="feather icon-star-on"></i>
                                 <i class="feather icon-star-on"></i>
                             </div>
-                            <h4><?= $sanpham['gia_sp'] ?></h4>
+                            <h4><?= $sanpham['gia_sp'] ?>₫</h4>
                         </div>
                         <li><a href="" class="feather icon-shopping-cart cart"></a></li>
                     </div>

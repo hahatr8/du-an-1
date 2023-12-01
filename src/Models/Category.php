@@ -9,4 +9,8 @@ class Category extends Model {
     protected $columns = [
         'ten_dm',
     ];
+    public function getAll()
+    {
+        return $this->all();
+    }
 }

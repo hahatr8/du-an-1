@@ -2,133 +2,23 @@
     <h2>Sản phẩm nổi bật</h2>
     <p>Bộ sưu tập thiết kế hiện đại</p>
     <div class="pro-container">
-        <div class="pro" onclick="window.location.href='/src/Views/client/sproduct.php';">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
+        <?php foreach ($danhSachSanPham as $item) : ?>
+            <input type="hidden" name="id" value="<?= $item['id'] ?>">
+            <div class="pro" name="btn" onclick="window.location.href='/sproduct?id_sp=<?= $item['id'] ?>';">
+                <img src="<?= $item['img_sp'] ?>" alt="">
+                <div class="des">
+                    <!-- <span>adidas</span> -->
+                    <h5><?= $item['ten_sp'] ?></h5>
+                    <div class="star">
+                        <i class="feather icon-star-on"></i>
+                        <i class="feather icon-star-on"></i>
+                        <i class="feather icon-star-on"></i>
+                        <i class="feather icon-star-on"></i>
+                        <i class="feather icon-star-on"></i>
+                    </div>
+                    <h4><?= $item['gia_sp'] ?>₫</h4>
                 </div>
-                <h4>$123</h4>
+                <li><a href="" class="feather icon-shopping-cart cart"></a></li>
             </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
-        <div class="pro">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
-            <div class="des">
-                <span>adidas</span>
-                <h5>Quần short</h5>
-                <div class="star">
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                    <i class="feather icon-star-on"></i>
-                </div>
-                <h4>$123</h4>
-            </div>
-            <li><a href="" class="feather icon-shopping-cart cart"></a></li>
-        </div>
+        <?php endforeach ?> 
     </div>
-</div>

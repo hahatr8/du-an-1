@@ -21,4 +21,26 @@ class SanPham extends Model
         return $this->all();
     }
 
+    public function sproduct($id)
+    {
+        $sql = "
+            SELECT 
+                s.id s_id,
+                s.ten_sp s_ten_sp,
+                s.img_sp s_img_sp,
+                s.mota_sp s_mota_sp,
+                s.gia_sp s_gia_sp,
+                s.soluong_sp s_soluong_sp,
+                s.luotxem s_luotxem
+            FROM sanpham s
+            WHERE s.id =" . $id;
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
 }
