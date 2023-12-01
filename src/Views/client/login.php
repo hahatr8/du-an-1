@@ -40,7 +40,7 @@
                     <input type="submit" name="btn-submit-login" value="Đăngg Nhập" class="btn-primary btn-block">
                     <br>
 
-                    <a class="btn btn-success" href="http://du-an-1.test/register">Đăng kí tài khoản mới</a>
+                    <a class="btn btn-success" href="/register">Đăng kí tài khoản mới</a>
 
                 </form>
             </div>

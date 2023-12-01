@@ -13,20 +13,15 @@ class HomeController extends Controller
     */
     public function index()
     {
-        $product1 = (new Sanpham())->all();
+        $categoriesModel = new Category();
+        $listCategories = $categoriesModel->getAll();
 
-        $categories = (new Category())->all();
+        $sanphamModel = new Sanpham();
+        $danhSachSanPham = $sanphamModel->getAll();
 
-        $this->render('client/home', ['sanpham' => $product1, "categories" => $categories]);
-
-        // $sanphamModel = new Sanpham();
-        // $danhSachSanPham = $sanphamModel->getAll();
-
-
-        // $data = [
-        //     'danhSachSanPham' => $danhSachSanPham
-        // ];
-
-        // return $this->render('client/shop', $data);
+        return $this->render('client/home', [
+            "danhSachSanPham" => $danhSachSanPham,
+            "listCategories" => $listCategories,
+        ]);
     }
 }

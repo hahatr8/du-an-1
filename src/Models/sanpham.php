@@ -21,50 +21,26 @@ class SanPham extends Model
         return $this->all();
     }
 
-    public function product1() {
-            $sql = "
-                SELECT 
-                    p.name p_name,
-                    p.price p_price,
-                    p.price_sale p_price_sale,
-                    p.img p_img,
-                    c.id c_id,
-                    c.name c_name
-                FROM products p 
-            ";
-    
-            $stmt = $this->conn->prepare($sql);
-    
-            $stmt->execute();
-    
-            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-    
-            return $stmt->fetchAll();
-        }
+    public function sproduct($id)
+    {
+        $sql = "
+            SELECT 
+                s.id s_id,
+                s.ten_sp s_ten_sp,
+                s.img_sp s_img_sp,
+                s.mota_sp s_mota_sp,
+                s.gia_sp s_gia_sp,
+                s.soluong_sp s_soluong_sp,
+                s.luotxem s_luotxem
+            FROM sanpham s
+            WHERE s.id =" . $id;
 
-    // public function getLatestLimit10() {
-    //     $sql = "
-    //         SELECT 
-    //             p.name p_name,
-    //             p.price p_price,
-    //             p.price_sale p_price_sale,
-    //             p.img p_img,
-    //             c.id c_id,
-    //             c.name c_name
-    //         FROM products p 
-    //         JOIN categories c
-    //             ON p.category_id = c.id
-    //         WHERE p.is_active = 1
-    //         ORDER BY p.id DESC
-    //         LIMIT 10
-    //     ";
+        $stmt = $this->conn->prepare($sql);
 
-    //     $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
 
-    //     $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
 
-    //     $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-
-    //     return $stmt->fetchAll();
-    // }
+        return $stmt->fetchAll();
+    }
 }

@@ -1,15 +1,15 @@
 <div class="header">
     <div class="logo">
-        <a href="/src/Views/client/home.php"><img src="/assets/client//assets/img/logo.jpg"></a>
+        <a href="/"><img src="/assets/client//assets/img/logo.jpg"></a>
     </div>
     <div class="menu">
-    <?php foreach ($categories as $categorie) : ?>
         <li><a href="">Bé gái <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
-                <li><a href=""><?=$categorie['ten_dm'] ?></a></li>
+                <?php foreach ($listCategories as $categorie) : ?>
+                    <li><a href=""><?= $categorie['ten_dm'] ?></a></li>
+                <?php endforeach ?>
             </ul>
         </li>
-        <?php endforeach ?>
         <li><a href="">Bé trai <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
                 <li><a href="">QUẦN</a></li>
@@ -31,8 +31,8 @@
     </div>
     <div class="others">
         <li><input type="search" placeholder="Tìm kiếm"><i class="feather icon-search"></i></li>
-        <li><a href="http://du-an-1.test/login" class="feather icon-user"></a></li>
-        <li><a href="http://du-an-1.test/cart" class="feather icon-shopping-cart"></a></li>
+        <li><a href="/login" class="feather icon-user"></a></li>
+        <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out"></a></li>
     </div>
 </div>

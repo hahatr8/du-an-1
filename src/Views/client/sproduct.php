@@ -4,9 +4,8 @@
 <?php require_once 'components-home/head.php' ?>
 
 <body>
-
     <?php require_once 'components-home/header.php' ?>
-
+    
     <div id="prodetails" class="section-p1">
         <div class="single-pro-img">
             <img src="/assets/client//assets/img/quan/quan1.jpg" width="100%" id="MainImg" alt="">
@@ -29,8 +28,8 @@
 
         <div class="single-pro-details">
             <h6>Home/T-Shirt</h6>
-            <h4>Quần short</h4>
-            <h2>$122</h2>
+            <h4><?= $sanpham[0]['s_ten_sp'] ?></h4>
+            <h2><?= $sanpham[0]['s_gia_sp'] ?>₫</h2>
             <div class="form-radio m-b-30">
                 <form>
                     <div class="radio radio-matrial radio-primary radio-inline">
@@ -61,16 +60,16 @@
             </div>
             <div class="radio">
                 <h6>Kích thước</h6>
-                <input type="radio" name="size" id="1Y-9-11kg" value="1Y-9-11kg">
-                <input type="radio" name="size" id="2Y-11-12kg" value="2Y-11-12kg">
-                <input type="radio" name="size" id="3Y-12-13kg" value="3Y-12-13kg">
+                <input type="radio" name="size" id="1Y-9-11kg" value="1Y-9-11kg"> X
+                <input type="radio" name="size" id="2Y-11-12kg" value="2Y-11-12kg"> XL
+                <input type="radio" name="size" id="3Y-12-13kg" value="3Y-12-13kg"> XXL
             </div>
-            <h6>Số lượng</h6>
+            <h6>Số lượng: <?= $sanpham[0]['s_soluong_sp'] ?></h6>
             <input type="number" value="1">
             <button class="normal w">Thêm vào giỏ hàng</button>
             <button class="normal">Mua</button>
             <h4>Chi tiết sản phẩm</h4>
-            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati assumenda, commodi maiores explicabo consequatur nobis facere, ex harum perferendis, aperiam porro labore delectus necessitatibus. Nihil esse eos consequuntur obcaecati rerum?</span>
+            <span><?= $sanpham[0]['s_mota_sp'] ?></span>
         </div>
 
     </div>

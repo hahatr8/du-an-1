@@ -29,7 +29,7 @@ class LoginController extends Controller
                 $userId = $loginModel->getIdByName($username);
                 $_SESSION['id_user'] = $userId;
 
-                header('Location: /cart');
+                header('Location: /');
                 exit;
             } else {
                 echo '<script>';
