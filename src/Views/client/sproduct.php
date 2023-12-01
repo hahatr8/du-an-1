@@ -52,13 +52,19 @@
         </div>
 
     </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#binhluan").load("View/admin/comments/create.php", {idpro: <?= $id?>});
 
-    <div class="comment-box">
+                });
+            </script> -->
+        <div class="comment-box">
         <h3>Viết bình luận</h3>
-        <form id="comment-form">
+        <!-- <form id="comment-form">
             <textarea id="comment-input" placeholder="Nhập bình luận của bạn..."></textarea>
             <button id="comment-submit" type="submit">Gửi</button>
-        </form>
+        </form> -->
     </div>
     <div class="comment-list">
         <h3>Bình luận gần đây</h3>

@@ -1,3 +1,10 @@
+<?php
+// require_once ('../../admin/View/Models/Comment.php');
+
+// $idpro=$_REQUEST['idpro'];
+
+?>
+
 <div class="pcoded-content">
 
     <div class="page-header card">
@@ -40,6 +47,7 @@
 
                                     <div class="card-block">
                                         <form action="" method="post">
+                                            
                                             <label for="name">Comment</label>
                                             <input type="text" name="noidung" class="form-control" required>
 

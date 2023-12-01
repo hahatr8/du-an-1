@@ -30,7 +30,13 @@
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
-        <li><input type="search" placeholder="Tìm kiếm"><i class="feather icon-search"></i></li>
+        <form action="" method="post">
+            <p>
+                <input type="text" name="kyw" placeholder="Tìm kiếm">
+                <input type="submit" value="Tìm Kiếm" class="feather icon-search" name="timkiem">
+            </p>
+        </form>
+
         <li><a href="" class="feather icon-user"></a></li>
         <li><a href="" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out"></a></li>
