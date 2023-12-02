@@ -15,7 +15,7 @@
 
     <?php require_once 'components-home/banner.php' ?>
 
-    
+
 
     <div id="product1" class="section-p1">
         <h2>Sản phẩm mới về</h2>
@@ -25,7 +25,7 @@
                 <img src="/assets/client//assets/img/quan/quan1.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Quần short</h5>
+                    <h5>sản phẩm 1</h5>
                     <div class="star">
                         <i class="feather icon-star-on"></i>
                         <i class="feather icon-star-on"></i>

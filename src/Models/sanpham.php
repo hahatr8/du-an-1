@@ -4,7 +4,7 @@ namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class Sanpham extends Model
+class SanPham extends Model
 {
     protected $table = 'sanpham';
     protected $columns = [
@@ -18,6 +18,10 @@ class Sanpham extends Model
         'id_color',
         'id_size',
     ];
+    public function getAll()
+    {
+        return $this->all();
+    }
 
     // public function detailSp()
     // {
@@ -46,3 +50,4 @@ class Sanpham extends Model
         //   return $results;
         // }
     }
+
