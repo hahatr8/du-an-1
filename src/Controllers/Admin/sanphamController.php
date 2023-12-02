@@ -143,4 +143,9 @@ class SanphamController extends Controller
 
         header('Location: /admin/sanpham');
     }
+
+    // public function timkiem(){
+    //     if(isset($_POST['timkiem'])){
+    //         $kyw = $_POST['kyw'];
+    // }
 }

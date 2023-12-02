@@ -1,3 +1,5 @@
+
+
 <div class="header">
     <div class="logo">
         <a href="/src/Views/client/home.php"><img src="/assets/client//assets/img/logo.jpg"></a>
@@ -30,7 +32,7 @@
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
-        <form action="" method="post">
+        <form action="../../../Controllers/Admin/sanphamController.php" method="post">
             <p>
                 <input type="text" name="kyw" placeholder="Tìm kiếm">
                 <input type="submit" value="Tìm Kiếm" class="feather icon-search" name="timkiem">

@@ -39,15 +39,23 @@ class SanPham extends Model
     //     }
     //     return $stmt->fetchAll();
     // }
- 
-        // public function search($keyword) {
-        //   // Thực hiện câu truy vấn tìm kiếm trong cơ sở dữ liệu
-        //   // Ví dụ: SELECT * FROM products WHERE name LIKE '%keyword%'
-        //   $sql="SELECT * FROM sanpham WHERE name LIKE '%keyword%'";
-        //   // Ghi lại kết quả vào biến $results
-        //   $results = array($keyword);
-          
-        //   return $results;
-        // }
-    }
 
+    // public function search($kyw)
+    // {
+    //     // Thực hiện câu truy vấn tìm kiếm trong cơ sở dữ liệu
+    //     // Ví dụ: SELECT * FROM products WHERE name LIKE '%keyword%'
+    //     $sql = "SELECT * FROM sanpham WHERE name LIKE '%keyword%'";
+
+    //     $stmt = $this->conn->prepare($sql);
+
+    //     $stmt->execute();
+
+    //     $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+
+    //     // Ghi lại kết quả vào biến $results
+    //     $results = array($kyw);
+
+    //     return $results;
+    // }
+}
