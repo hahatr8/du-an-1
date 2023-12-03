@@ -76,6 +76,11 @@ if (isset($_POST['logout'])) {
     header('Location: /login');
     exit();
 }
+if (isset($_POST['btn-checkout'])) {
+    header('Location: /order');
+}
+
+
 
 
 

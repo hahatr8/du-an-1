@@ -65,6 +65,7 @@ class Cart extends Model
         return null;
     }
 
+
     public function calculateTotalPrice($id)
     {
         $sql = "SELECT SUM(soluong_sp * gia_sp) AS total_price 
@@ -82,4 +83,19 @@ class Cart extends Model
 
         return 0;
     }
+    public function getSoLuongSanPham($id_sp)
+    {
+        $sql = "SELECT soluong_sp FROM giohang WHERE id_sp = :id_sp";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id_sp', $id_sp);
+        $stmt->execute();
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        $soluong = $result['soluong_sp'];
+
+        return $soluong;
+    }
+
+
+
 }

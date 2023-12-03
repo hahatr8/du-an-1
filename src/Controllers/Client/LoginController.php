@@ -21,7 +21,6 @@ class LoginController extends Controller
             $isLoggedIn = $loginModel->authenticate($username, $password);
 
             if ($isLoggedIn) {
-                // Lưu thông tin đăng nhập vào session
                 $_SESSION['tk_user'] = $username;
 
 
@@ -29,7 +28,7 @@ class LoginController extends Controller
                 $userId = $loginModel->getIdByName($username);
                 $_SESSION['id_user'] = $userId;
 
-                header('Location: /cart');
+                header('Location: /');
                 exit;
             } else {
                 echo '<script>';
