@@ -58,7 +58,7 @@
                                             <label for="role" class="mt-3">Chức năng(0 admin, 1 khách hàng)</label>
                                             <input type="text" name="role" class="form-control" required>
 
-                                            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
+                                            <button type="submit" name="btn-submit-login" class="btn btn-info mt-3">Submit</button>
                                             <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
                                         </form>
                                     </div>

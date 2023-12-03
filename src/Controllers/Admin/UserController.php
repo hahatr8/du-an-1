@@ -47,7 +47,7 @@ class UserController extends Controller
                 'diachi_user' => $_POST['diachi_user'],
                 'sdt_user' => $_POST['sdt_user'],
                 'email_user' => $_POST['email_user'],
-                'role' => $_POST[' role'],
+                'role' => $_POST['role'],
             ];
 
             $conditions = [

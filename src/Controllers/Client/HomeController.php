@@ -3,6 +3,8 @@
 namespace Ductong\BaseMvc\Controllers\Client;
 
 use Ductong\BaseMvc\Controller;
+use Ductong\BaseMvc\Models\Category;
+use Ductong\BaseMvc\Models\Sanpham;
 
 class HomeController extends Controller
 {
@@ -11,6 +13,15 @@ class HomeController extends Controller
     */
     public function index()
     {
-        $this->render('client/home');
+        // $categoriesModel = new Category();
+        // $listCategories = $categoriesModel->getAll();
+
+        $sanphamModel = new Sanpham();
+        $danhSachSanPham = $sanphamModel->getAll();
+
+        return $this->render('client/home', [
+            "danhSachSanPham" => $danhSachSanPham,
+            // "listCategories" => $listCategories,
+        ]);
     }
 }

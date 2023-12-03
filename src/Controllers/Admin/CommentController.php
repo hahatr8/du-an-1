@@ -1,26 +1,30 @@
-<?php 
+<?php
 
 namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Comment;
 
-class CommentController extends Controller {
+class CommentController extends Controller
+{
 
     /* Lấy danh sách */
-    public function index() {
+    public function index()
+    {
         $Comments = (new Comment())->all();
 
         $this->renderAdmin("comments/index", ['Comments' => $Comments]);
     }
 
     /* Thêm mới */
-    public function create() {
-        if (isset($_POST["btn-submit"])) { 
+    public function create()
+    {
+        if (isset($_POST["btn-submit"])) {
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => date('H:i d-m-y'),
-                // 'idpro' => $_POST['idpro'],
+                $_SESSION['id_user'] => $_POST['id_user'],
+                'id_sp' => $_POST['id_sp'],
             ];
 
             (new Comment())->insert($data);
@@ -32,14 +36,16 @@ class CommentController extends Controller {
     }
 
     /* Cập nhật */
-    public function update() {
+    public function update()
+    {
 
         $Comment = (new Comment())->findOne($_GET["id"]);
 
-        if (isset($_POST["btn-submit"])) { 
+        if (isset($_POST["btn-submit"])) {
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => $Comment['ngaybinhluan'],
+                'id_user' => $_POST['id_user']
             ];
 
             $conditions = [
@@ -53,7 +59,8 @@ class CommentController extends Controller {
     }
 
     /* Xóa */
-    public function delete() {
+    public function delete()
+    {
         $conditions = [
             ['id', '=', $_GET['id']],
         ];
@@ -63,6 +70,3 @@ class CommentController extends Controller {
         header('Location: /admin/Comments');
     }
 }
-
-
-
