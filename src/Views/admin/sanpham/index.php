@@ -70,7 +70,7 @@
                                                              <td><?= $item['soluong_sp'] ?></td>
                                                              <td><?= $arrayCategoryIdName[$item['id_dm']] ?></td>
                                                              <td><input type="color" value="<?= $arrayColorIdName[$item['id_color']] ?> ?>" disabled></td>
-                                                             <td><?= $arrayColorIdName[$item['id_size']] ?></td>
+                                                             <td><?= $arraySizeIdName[$item['id_size']] ?></td>
                                                              <td><?= $item['luotxem'] ?></td>
                                                              <td>
                                                                  <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm mt-2">Cập nhật</a>
