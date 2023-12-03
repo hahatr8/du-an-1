@@ -47,6 +47,7 @@
                                                         <th>ID</th>
                                                         <th>Nội dung</th>
                                                         <th>Ngày bình luận</th>
+                                                        <th>Người bình luận</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -56,6 +57,7 @@
                                                             <td><?= $Comment['id'] ?></td>
                                                             <td><?= $Comment['noidung'] ?></td>
                                                             <td><?= $Comment['ngaybinhluan'] ?></td>
+                                                            <td><?= $Comment['id_user'] ?></td>
                                                             <td>
                                                                 <a href="/admin/comments/update?id=<?= $Comment['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 

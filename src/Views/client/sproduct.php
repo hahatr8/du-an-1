@@ -5,10 +5,11 @@
 
 <body>
     <?php require_once 'components-home/header.php' ?>
-    
+
     <div id="prodetails" class="section-p1">
         <div class="single-pro-img">
-            <img src="/assets/client//assets/img/quan/quan1.jpg" width="100%" id="MainImg" alt="">
+            <input type="hidden" name="id_dm" value="<?= $sanpham[0]['s_id_dm'] ?>">
+            <img src="<?= $sanpham[0]['s_img_sp'] ?>" width="100%" id="MainImg" alt="">
 
             <div class="small-img-group">
                 <div class="small-img-col">
@@ -73,32 +74,24 @@
         </div>
 
     </div>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    $("#binhluan").load("View/admin/comments/create.php", {idpro: <?= $id?>});
-
-                });
-            </script> -->
-        <div class="comment-box">
+    <div class="comment-box">
         <h3>Viết bình luận</h3>
-        <!-- <form id="comment-form">
-            <textarea id="comment-input" placeholder="Nhập bình luận của bạn..."></textarea>
-            <button id="comment-submit" type="submit">Gửi</button>
-        </form> -->
+        <form action="/sproduct/create" method="POST">
+            <input type="hidden" name="id_sp" value="<?= $sanpham[0]['s_id'] ?>">
+            <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+            <textarea id="comment-input" name="noidung" placeholder="Nhập bình luận của bạn..."></textarea>
+            <button id="comment-submit" type="submit" name="btn-submit">Gửi</button>
+        </form>
     </div>
     <div class="comment-list">
         <h3>Bình luận gần đây</h3>
-        <div class="comment-item">
-            <div class="comment-author">Nguyễn Văn A</div>
-            <div class="comment-content">Bài viết rất hay và bổ ích. Cảm ơn bạn đã chia sẻ.</div>
-            <div class="comment-time">5 phút trước</div>
-        </div>
-        <div class="comment-item">
-            <div class="comment-author">Trần Thị B</div>
-            <div class="comment-content">Mình cũng đang tìm hiểu về chức năng comment. Code của bạn rất dễ hiểu và áp dụng. Cảm ơn bạn nhiều.</div>
-            <div class="comment-time">10 phút trước</div>
-        </div>
+        <?php foreach ($danhSachComments as $comment) : ?>
+            <div class="comment-item">
+                <div class="comment-author"><?= $comment['id_user'] ?></div>
+                <div class="comment-content"><?= $comment['noidung'] ?></div>
+                <div class="comment-time"><?= $comment['ngaybinhluan'] ?></div>
+            </div>
+        <?php endforeach; ?>
     </div>
 
 

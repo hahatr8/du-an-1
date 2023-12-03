@@ -7,7 +7,7 @@
     <div class="menu">
         <li><a href="">Bé gái <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
-                <?php foreach ($listCategories as $categorie) : ?>
+                <?php foreach ($GLOBALS['categoryForMenu'] as $categorie) : ?>
                     <li><a href=""><?= $categorie['ten_dm'] ?></a></li>
                 <?php endforeach ?>
             </ul>
@@ -32,8 +32,8 @@
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
-        <li><input type="search" placeholder="Tìm kiếm"><i class="feather icon-search"></i></li>
-        <li><a href="/login" class="feather icon-user"></a></li>
+        <li><input type="search" placeholder="Tìm kiếm"><a href=""><i class="feather icon-search"></i></a></li>
+        <li><a href="/login" class="feather icon-user"></a></li> 
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out"></a></li>
     </div>

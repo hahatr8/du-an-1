@@ -23,7 +23,8 @@ class CommentController extends Controller
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => date('H:i d-m-y'),
-                // 'idpro' => $_POST['idpro'],
+                $_SESSION['id_user'] => $_POST['id_user'],
+                'id_sp' => $_POST['id_sp'],
             ];
 
             (new Comment())->insert($data);
@@ -44,6 +45,7 @@ class CommentController extends Controller
             $data = [
                 'noidung' => $_POST['noidung'],
                 'ngaybinhluan' => $Comment['ngaybinhluan'],
+                'id_user' => $_POST['id_user']
             ];
 
             $conditions = [
