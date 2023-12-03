@@ -18,7 +18,8 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
-button.normal{
+
+button.normal {
     width: 250px;
     font-size: 14px;
     font-weight: 600;
@@ -31,6 +32,7 @@ button.normal{
     outline: none;
     transition: 0.2s;
 }
+
 .top {
     padding: 12px 0;
     align-items: center;
@@ -380,17 +382,21 @@ button.normal{
     font-size: 30px;
     padding: 10px 0;
 }
-#banner h2 span{
+
+#banner h2 span {
     color: #ef3636;
 }
+
 #banner button {
     margin-left: 42%;
 }
-#banner button:hover{
+
+#banner button:hover {
     background-color: #088178;
 }
+
 /* -----------foot----------- */
-#newsletter{
+#newsletter {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -400,26 +406,29 @@ button.normal{
     background-position: 20% 30%;
     background-color: #041e42;
 }
-#newsletter h4{
+
+#newsletter h4 {
     font-size: 22px;
     font-weight: 700;
     color: #fff;
 }
 
-#newsletter p{
+#newsletter p {
     font-size: 14px;
     font-weight: 600;
     color: #818ea0;
 }
 
-#newsletter p span{
+#newsletter p span {
     color: #ffbd27;
 }
-#newsletter .form{
+
+#newsletter .form {
     display: flex;
     width: 40%;
 }
-#newsletter input{
+
+#newsletter input {
     height: 3.125rem;
     padding: 0 1.25rem;
     font-size: 14px;
@@ -439,68 +448,71 @@ button.normal{
     border-bottom-left-radius: 0;
 }
 
-.footer{
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.footer .col{
+.footer .col {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
 }
 
-.footer .logo{
+.footer .logo {
     margin-bottom: 30px;
 }
 
-.footer h4{
+.footer h4 {
     font-size: 14px;
     padding-bottom: 20px;
 }
 
-.footer p{
+.footer p {
     font-size: 13px;
     margin: 0 0 8px 0;
 }
 
-.footer a{
+.footer a {
     font-size: 13px;
     text-decoration: none;
     color: #222;
     margin-bottom: 10px;
 }
 
-.footer .follow{
+.footer .follow {
     margin-top: 20px;
 }
 
-.footer .follow i{
+.footer .follow i {
     color: #465b52;
     padding-right: 4px;
     cursor: pointer;
 }
+
 .row img {
     width: 253px;
     height: 78px;
 }
+
 .a {
     width: 253px;
     height: 78px;
 }
-.footer .install .row img{
+
+.footer .install .row img {
     border: 1px solid #088178;
     border-radius: 6px;
 }
 
-.footer .install img{
+.footer .install img {
     margin: 10px 0 15px 0;
 }
 
 .footer .follow i:hover,
-.footer a:hover{
+.footer a:hover {
     color: #088178;
 }
 
@@ -509,7 +521,7 @@ button.normal{
     text-align: center;
 }
 
-#pagination a{
+#pagination a {
     text-decoration: none;
     background-color: #088178;
     padding: 15px 20px;
@@ -517,52 +529,54 @@ button.normal{
     color: #fff;
     font-weight: 600;
 }
-#pagination a i{
+
+#pagination a i {
     font-size: 16px;
     font-weight: 600;
 }
 
 /*-------------- single product--------- */
-#prodetails{
+#prodetails {
     display: flex;
     margin-top: 70px;
 }
 
-#prodetails .single-pro-img{
+#prodetails .single-pro-img {
     width: 40%;
     margin-right: 50px;
 }
+
 .small-img-group {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
 }
 
-.small-img-col{
+.small-img-col {
     flex-basis: 24%;
     cursor: pointer;
 }
 
-#prodetails .single-pro-details{
+#prodetails .single-pro-details {
     width: 50%;
     padding-top: 30px;
 }
 
-#prodetails .single-pro-details h4{
+#prodetails .single-pro-details h4 {
     padding: 40px 0 20px 0;
 }
 
-#prodetails .single-pro-details h2{
+#prodetails .single-pro-details h2 {
     font-size: 26px;
 }
 
-#prodetails .single-pro-details .radio{
+#prodetails .single-pro-details .radio {
     display: block;
     padding: 5px 10px;
     margin-bottom: 10px;
 }
 
-#prodetails .single-pro-details input{
+#prodetails .single-pro-details input {
     width: 50px;
     height: 47px;
     padding-left: 10px;
@@ -570,30 +584,30 @@ button.normal{
     margin-right: 10px;
 }
 
-#prodetails .single-pro-details input:focus{
+#prodetails .single-pro-details input:focus {
     outline: none;
 }
 
-#prodetails .single-pro-details .w{
+#prodetails .single-pro-details .w {
     background-color: #fff;
     color: #ffbd27;
 }
 
-#prodetails .single-pro-details .w:hover{
+#prodetails .single-pro-details .w:hover {
     background-color: #ffbd27;
     color: #fff;
 }
 
-#prodetails .single-pro-details button{
+#prodetails .single-pro-details button {
     background-color: #ffbd27;
     color: #fff;
 }
 
-#prodetails .single-pro-details button:hover{
+#prodetails .single-pro-details button:hover {
     opacity: 0.8;
 }
 
-#prodetails .single-pro-details span{
+#prodetails .single-pro-details span {
     line-height: 25px;
 }
 
@@ -603,25 +617,25 @@ button.normal{
     filter: hue-rotate(0deg);
 }
 
-
+/* comment */
 .comment-box {
     width: 1000px;
     margin: 20px auto;
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f0f0f0;
-  }
-  
-  .comment-box h3 {
+}
+
+.comment-box h3 {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .comment-box textarea {
+}
+
+.comment-box textarea {
     width: 100%;
     height: 100px;
     margin: 10px 0;
@@ -630,9 +644,9 @@ button.normal{
     font-family: Arial, sans-serif;
     font-size: 14px;
     resize: none;
-  }
-  
-  .comment-box button {
+}
+
+.comment-box button {
     width: 100px;
     height: 40px;
     margin: 10px 0;
@@ -644,48 +658,47 @@ button.normal{
     color: #fff;
     background-color: #333;
     cursor: pointer;
-  }
-  
-  .comment-list {
+}
+
+.comment-list {
     width: 1000px;
     margin: 20px auto;
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f0f0f0;
-  }
-  
-  .comment-list h3 {
+}
+
+.comment-list h3 {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .comment-item {
+}
+
+.comment-item {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
     background-color: #fff;
-  }
-  
-  .comment-author {
+}
+
+.comment-author {
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .comment-content {
+}
+
+.comment-content {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
-  }
-  
-  .comment-time {
+}
+
+.comment-time {
     font-family: Arial, sans-serif;
     font-size: 12px;
     color: #999;
-  }
-  
+}

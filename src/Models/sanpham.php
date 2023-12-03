@@ -23,39 +23,26 @@ class SanPham extends Model
         return $this->all();
     }
 
-    // public function detailSp()
-    // {
-    //     if (isset($_GET['id'])) {
-    //         $id = $_GET['id'];
-    //         $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE id = $id";
-    //         $stmt = $this->conn->prepare($sql);
+    public function sproduct($id)
+    {
+        $sql = "
+            SELECT 
+                s.id s_id,
+                s.ten_sp s_ten_sp,
+                s.img_sp s_img_sp,
+                s.mota_sp s_mota_sp,
+                s.gia_sp s_gia_sp,
+                s.soluong_sp s_soluong_sp,
+                s.luotxem s_luotxem
+            FROM sanpham s
+            WHERE s.id =" . $id;
 
-    //         $stmt->execute();
+        $stmt = $this->conn->prepare($sql);
 
-    //         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        $stmt->execute();
 
-    //     } else {
-    //         echo "loi";
-    //     }
-    //     return $stmt->fetchAll();
-    // }
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
 
-    // public function search($kyw)
-    // {
-    //     // Thực hiện câu truy vấn tìm kiếm trong cơ sở dữ liệu
-    //     // Ví dụ: SELECT * FROM products WHERE name LIKE '%keyword%'
-    //     $sql = "SELECT * FROM sanpham WHERE name LIKE '%keyword%'";
-
-    //     $stmt = $this->conn->prepare($sql);
-
-    //     $stmt->execute();
-
-    //     $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-
-
-    //     // Ghi lại kết quả vào biến $results
-    //     $results = array($kyw);
-
-    //     return $results;
-    // }
+        return $stmt->fetchAll();
+    }
 }

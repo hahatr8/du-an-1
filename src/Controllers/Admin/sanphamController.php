@@ -41,9 +41,6 @@ class SanphamController extends Controller
         $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName, "arrayColorIdName" => $arrayColorIdName,"arraySizeIdName" => $arraySizeIdName ]);
     }
 
-
-
-
     public function create()
     {
 
