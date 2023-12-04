@@ -4,7 +4,7 @@
     <div class="pro-container">
         <?php foreach ($danhSachSanPham as $item) : ?>
             <input type="hidden" name="id" value="<?= $item['id'] ?>">
-            <div class="pro" name="btn" onclick="window.location.href='/sproduct?id_sp=<?= $item['id'] ?>';">
+            <div class="pro" name="btn" onclick="window.location.href='/sproduct?id_sp=<?= $item['id'] ?>&id_dm=<?= $item['id_dm'] ?>';">
                 <img src="<?= $item['img_sp'] ?>" alt="">
                 <div class="des">
                     <!-- <span>adidas</span> -->

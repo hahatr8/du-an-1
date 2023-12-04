@@ -17,10 +17,14 @@ class SproductController extends Controller
 
         $commentsModel = new Comment();
         $danhSachComments = $commentsModel->loadComment($id);
-
+        if (isset($_GET['id_dm'])) {
+            $id_dm = $_GET['id_dm'];
+            $loads = (new SanPham())->getALLCategoryID($id_dm);
+        }
         return $this->render("client/sproduct", [
             "sanpham" => $sanpham,
             "danhSachComments" => $danhSachComments,
+            "loads" => $loads,
         ]);
     }
 
@@ -44,9 +48,10 @@ class SproductController extends Controller
     }
     public function loadProductByCategory()
     {
-        $id_dm = $_POST["id_dm"];
-        $load = (new Sanpham())->getALLCategoryID($id_dm);
-
+        if (isset($_POST["id_dm"])) {
+            $id_dm = $_POST["id_dm"];
+            $load = (new SanPham())->getALLCategoryID($id_dm);
+        }
         return $this->render("client/sproduct", [
             "load" => $load
         ]);
