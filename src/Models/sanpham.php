@@ -15,8 +15,8 @@ class SanPham extends Model
         'soluong_sp',
         'luotxem',
         'id_dm',
-        'id_color',
-        'id_size',
+        // 'id_color',
+        // 'id_size',
     ];
     public function getAll()
     {

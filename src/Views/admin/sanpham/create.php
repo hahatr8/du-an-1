@@ -52,12 +52,6 @@
                                                     <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
                                                 <?php endforeach; ?>
                                             </select><br><br>
-                                            <label for="">Size </label><br>
-                                                <input type="checkbox" name="id_size" value="<?=$item['id'] ?>">
-                                                <?php 
-                                                foreach ($size as $item) :?>
-                                                <label for=""><?= $item['ten_color'] ?></label>
-                                                <?php endforeach; ?>
 
                                             <label for="img_sp">Img</label>
                                             <input type="file" name="img" id="img_sp" class="form-control" required>

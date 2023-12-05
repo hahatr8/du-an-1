@@ -22,7 +22,7 @@ class SanphamController extends Controller
         $size = (new Size())->all();
 
 
- 
+        
         $arrayCategoryIdName = [];
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
@@ -52,6 +52,8 @@ class SanphamController extends Controller
                 'soluong_sp' => $_POST['soluong_sp'],
                 'luotxem' => $_POST['luotxem'],
                 'id_dm' => $_POST['id_dm'],
+                'id_color'=> $_POST['id_color'],
+                'id_size'=> $_POST['id_size'],
             ];
 
             $data['img_sp'] = null;
@@ -72,7 +74,9 @@ class SanphamController extends Controller
             header('Location: /admin/sanpham');
         }
         $categories = (new Category())->all();
-        $this->renderAdmin('sanpham/create', ["categories" => $categories]);
+        $color = (new Color())->all();
+        $size = (new Size())->all();
+        $this->renderAdmin('sanpham/create', ["categories" => $categories , "color" => $color,"size"=> $size]);
     }
 
 

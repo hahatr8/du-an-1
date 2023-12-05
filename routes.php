@@ -5,8 +5,8 @@ use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\SanphamController;
 use Ductong\BaseMvc\Controllers\Admin\CommentController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
-use Ductong\BaseMvc\Controllers\Admin\ColorController;
-use Ductong\BaseMvc\Controllers\Admin\SizeController;
+// use Ductong\BaseMvc\Controllers\Admin\ColorController;
+// use Ductong\BaseMvc\Controllers\Admin\SizeController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;  
 // use Ductong\BaseMvc\Controllers\Client\LoadSPController;
@@ -76,15 +76,15 @@ $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
 
-$router->addRoute('/admin/color', ColorController::class, 'index');
-$router->addRoute('/admin/color/create', ColorController::class, 'create');
-$router->addRoute('/admin/color/update', ColorController::class, 'update');
-$router->addRoute('/admin/color/delete', ColorController::class, 'delete');
+// $router->addRoute('/admin/color', ColorController::class, 'index');
+// $router->addRoute('/admin/color/create', ColorController::class, 'create');
+// $router->addRoute('/admin/color/update', ColorController::class, 'update');
+// $router->addRoute('/admin/color/delete', ColorController::class, 'delete');
 
-$router->addRoute('/admin/size', SizeController::class, 'index');
-$router->addRoute('/admin/size/create', SizeController::class, 'create');
-$router->addRoute('/admin/size/update', SizeController::class, 'update');
-$router->addRoute('/admin/size/delete', SizeController::class, 'delete');
+// $router->addRoute('/admin/size', SizeController::class, 'index');
+// $router->addRoute('/admin/size/create', SizeController::class, 'create');
+// $router->addRoute('/admin/size/update', SizeController::class, 'update');
+// $router->addRoute('/admin/size/delete', SizeController::class, 'delete');
 
 //clientColorController
 // $router->addRoute('/client/trangchu', LoadSPController::class, 'loadAll');
