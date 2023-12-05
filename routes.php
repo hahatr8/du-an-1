@@ -10,11 +10,13 @@ use Ductong\BaseMvc\Controllers\Client\RegisterController;
 
 
 
+
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\SproductController;
 use Ductong\BaseMvc\Controllers\Client\LoginController;
 use Ductong\BaseMvc\Controllers\Client\OrderController;
 use Ductong\BaseMvc\Controllers\Client\ShopController;
+use Ductong\BaseMvc\Controllers\Client\ShopsController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -27,13 +29,14 @@ $router->addRoute('/order', OrderController::class, 'order');
 $router->addRoute('/shop', ShopController::class, 'allProduct');
 
 
+
 $router->addRoute('/sproduct', SproductController::class, 'loadProductByCategory');
 $router->addRoute('/sproduct', SproductController::class, 'index');
 $router->addRoute('/sproduct/create', SproductController::class, 'create');
 
 
 
-
+$router->addRoute('/shops', ShopsController::class, 'index');
 
 
 $router->addRoute('/', HomeController::class, 'index');

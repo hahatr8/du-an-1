@@ -6,7 +6,7 @@
         <li><a href="">Bé gái <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
                 <?php foreach ($GLOBALS['categoryForMenu'] as $categorie) : ?>
-                    <li><a href=""><?= $categorie['ten_dm'] ?></a></li>
+                    <li><a href="/shops?id_dm=<?= $categorie['id'] ?>"><?= $categorie['ten_dm'] ?></a></li>
                 <?php endforeach ?>
             </ul>
         </li>
