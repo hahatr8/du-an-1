@@ -58,6 +58,34 @@ if (isset($_SESSION['tk_user'])) {
             exit();
         }
 
+
+
+        public function addToCart()
+        {
+            if (isset($_POST['btn-addToCart'])) {
+                $id_user = $_SESSION['id_user'];
+                $id_sp = $_POST['id_sp'];
+                $soluong_sp = $_POST['soluong_sp'];
+
+                $cartModel = new Cart();
+
+                // Ktra sp đã có trong giỏ hàng chưa
+                $existingItem = $cartModel->getItemByProductId($id_user, $id_sp);
+
+                if ($existingItem) {
+                    // đã có thì cộng số lượng
+                    $newQuantity = $existingItem['soluong_sp'] + $soluong_sp;
+                    $cartModel->updateSoLuong($existingItem['id'], $newQuantity);
+                } else {
+                    $cartModel->addProduct($id_user, $id_sp, $soluong_sp);
+                }
+            }
+
+
+            header('Location: /cart');
+            exit();
+        }
+
         public function session_destroy()
         {
             session_destroy();
@@ -76,6 +104,15 @@ if (isset($_POST['logout'])) {
     header('Location: /login');
     exit();
 }
+if (isset($_POST['btn-checkout'])) {
+    header('Location: /order');
+}
+
+if (isset($_POST['btn-order'])) {
+    header('Location: /order/createOrder');
+}
+
+
 
 
 

@@ -5,9 +5,16 @@ namespace Ductong\BaseMvc\Controllers\Client;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Comment;
 use Ductong\BaseMvc\Models\SanPham;
+use Ductong\BaseMvc\Models\Cart;
+
+require_once 'global.php';
 
 class SproductController extends Controller
 {
+
+
+
+
     public function index()
     {
         if (isset($_GET['id_sp'])) {
