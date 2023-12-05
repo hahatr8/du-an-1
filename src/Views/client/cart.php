@@ -122,7 +122,7 @@
                                                     title="Remove item">
                                                     <i class="fas fa-trash fa-2x "></i></button>
                                             </form>
-                                            <form action="/order?id_sp=<?= $item['id_sp']; ?>" method="post">
+                                            <form action="/order/createOrder" method="post">
                                                 <input value="Mua Hàng Ngay" name="btn-checkout" type="submit"
                                                     class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                                                     title="Đặt hàng">
@@ -198,13 +198,11 @@
                                 </ul>
 
 
-                                <form action="" method="post">
-                                    <input value="checkout" name="" type="submit"
+                                <form action="/order/createOrder" method="post">
+                                    <input value="checkout" name="btn-checkout" type="submit"
                                         class="btn btn-primary btn-lg btn-block">
                                     </input>
                                 </form>
-
-
                             </div>
                         </div>
                     </div>

@@ -5,36 +5,42 @@ namespace Ductong\BaseMvc\Controllers\Client;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Order;
 
+require_once 'global.php';
+
 class OrderController extends Controller
 {
-    public function index()
+    public function createOrder()
     {
-        if (isset($_POST['btn-checkout'])) {
-            $id_user = $_SESSION['id_user'];
-            $id_sp = $_GET['id_sp'];
-            echo "id sản phẩm là: " . $id_sp;
-
-            if (!empty($id_sp)) {
-                $orderModel = new Order();
-                $id_dh = $orderModel->taoDonHang($id_user, $id_sp);
-
-                if ($id_dh) {
-                    echo "Đã đặt hàng thành công";
-                } else {
-                    echo "Đặt hàng không thành công";
-                }
-            } else {
-                echo "Không tìm thấy thông tin sản phẩm";
-            }
+        if (!isset($_SESSION['id_user'])) {
+            echo 'Bạn chưa đăng nhập';
+            header('Location: /login');
+            return;
         }
 
-        // Lấy danh sách đơn hàng
-        $orderModel = new Order();
-        $orders = $orderModel->getAll();
+        if (isset($_POST['btn-checkout'])) {
+            $id_user = $_SESSION['id_user'];
+            $order = new Order();
 
 
-        $this->render('client/order', [
-            'orders' => $orders
-        ]);
+            // Gọi phương thức createOrder()  để tạo đơn hàng
+            $id_dh = $order->createOrder($id_user);
+
+            if ($id_dh) {
+                $this->render('client/order', ['orders' => $order->getAllOrders()]);
+                if (isset($_POST["btn-orderDetails"])) {
+                    echo "xem chi tiết nhé!";
+                }
+            } else {
+                echo "Không thể tạo đơn hàng!.";
+            }
+        }
+    }
+    public function viewOrderDetails($orderId)
+    {
+        $order = new Order();
+        $orderDetails = $order->getOrderById($orderId);
+
+        // Hiển thị view chi tiết đơn hàng
+        $this->render('client/order-details', ['orderDetails' => $orderDetails]);
     }
 }
