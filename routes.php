@@ -44,10 +44,15 @@ $router->addRoute('/cart/updateQuantity', CartController::class, 'updateQuantity
 $router->addRoute('/session_destroy', CartController::class, ' session_destroy');
 
 
-$router->addRoute('/order/index', OrderController::class, 'index');
-
+$router->addRoute('/order/cancelOrder', OrderController::class, 'cancelOrder');
 $router->addRoute('/order/createOrder', OrderController::class, 'createOrder');
-$router->addRoute('/order/order-details', OrderController::class, 'viewOrderDetails');
+$router->addRoute('/order/showOrder', OrderController::class, 'showOrder');
+$router->addRoute('/order/showOrderDetails', OrderController::class, 'showOrderDetails');
+
+
+
+
+
 
 
 

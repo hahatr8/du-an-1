@@ -79,56 +79,46 @@
                 </div>
             </div>
         </nav>
-
-
-        <section class="h-100 gradient-custom">
+        <section class="h-100 gradient-custom custom-section">
             <div class="container py-5">
                 <div class="row d-flex justify-content-center my-4">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card mb-4">
                             <div class="card-header py-3">
-                                <h5 class="mb-0">Đơn Hàng Của Bạn</h5>
+                                <h5 class="mb-0">Chi Tiết Đơn Hàng Mã <?php echo $orderDetails[0]['id_dh']; ?></h5>
+
                             </div>
                             <div>
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Mã đơn hàng</th>
-                                            <th>Ngày đặt Hàng</th>
-                                            <th>Trạng Thái</th>
-                                            <th>Tổng Giá Trị</th>
-                                            <th>Thao Tác</th>
+                                            <th>Tên Sản Phẩm</th>
+                                            <th>Ảnh</th>
+                                            <th>Giá Sản Phẩm</th>
+                                            <th>Số Lượng</th>
+                                            <th>Thành Tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($orders as $order): ?>
+                                        <?php foreach ($orderDetails as $orderItem): ?>
                                             <tr>
-                                                <td><?php echo $order['id']; ?></td>
-                                                <td><?php echo $order['ngaydathang']; ?></td>
+                                                <td><?php echo $orderItem['ten_sp']; ?></td>
+                                                <td><img src="<?php echo $orderItem['img_sp']; ?>" alt="Ảnh Sản Phẩm"
+                                                        width="100px"></td>
                                                 <td>
-                                                    <?php
-                                                    $trangThaiText = [
-                                                        0 => "Chờ xác nhận",
-                                                        1 => "Đang giao",
-                                                        2 => "Giao thành công"
-                                                    ];
-                                                    $trangThai = isset($trangThaiText[$order['trangthai']]) ? $trangThaiText[$order['trangthai']] : "Trạng thái không xác định";
-                                                    echo $trangThai;
-                                                    ?>
+                                                    <?php echo $orderItem['gia_sp']; ?> VNĐ
                                                 </td>
-                                                <td><?php echo $order['tongtien']; ?> VNĐ</td>
+                                                <td><?php echo $orderItem['soluong']; ?></td>
                                                 <td>
-                                                    <form action="/order/showOrderDetails" method="get">
-                                                        <input type="hidden" name="id_dh"
-                                                            value="<?php echo $order['id']; ?>">
-                                                        <button type="submit">Xem Chi Tiết</button>
-                                                    </form>
-
+                                                    <?php echo $orderItem['gia_donhang']; ?> VNĐ
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
+                                <a href="/order/showOrder" class="btn btn-link">
+                                    <i class="fas fa-arrow-left"></i> Quay lại
+                                </a>
                             </div>
                         </div>
 

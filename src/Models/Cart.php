@@ -78,7 +78,7 @@ class Cart extends Model
         $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        if ($result) {
+        if ($result && $result['total_price']) {
             return $result['total_price'];
         }
 
@@ -137,5 +137,12 @@ class Cart extends Model
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id_user', $idUser);
         $stmt->execute();
+
+
     }
+
+
+
+    
+
 }

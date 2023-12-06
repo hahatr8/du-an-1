@@ -24,18 +24,15 @@ class Order extends Model
 
     public function createOrder($id_user)
     {
-        
+
         // Tạo đơn hàng
         $ngayDatHang = date('Y-m-d');
         $trangThai = 0;
-        $tongTien = $this->cart->calculateTotalPrice($id_user);
         $id_user = $_SESSION['id_user'];
+        $tongTien = $this->cart->calculateTotalPrice($id_user);
 
-
-        $sql = "INSERT INTO $this->table (ngaydathang, trangthai, id_user, tongtien) VALUES (:ngaydathang, :trangthai, :id_user, :tongtien)";
+        $sql = "INSERT INTO donhang(ngaydathang, trangthai, id_user, tongtien) VALUES (:ngaydathang, :trangthai, :id_user, :tongtien)";
         $stmt = $this->conn->prepare($sql);
-
-       
         $stmt->bindParam(':ngaydathang', $ngayDatHang);
         $stmt->bindParam(':trangthai', $trangThai);
         $stmt->bindParam(':id_user', $id_user);
@@ -67,8 +64,6 @@ class Order extends Model
         return $id_dh;
     }
 
-
-
     public function getAllOrders()
     {
         $sql = "SELECT * FROM $this->table";
@@ -87,10 +82,14 @@ class Order extends Model
             'gia_donhang',
         ];
 
-        $sql = "SELECT * FROM chitietdonhang WHERE id_dh = :id_dh";
+        $sql = "SELECT " . implode(', ', $chitietColumns) . ", sanpham.img_sp, sanpham.ten_sp, sanpham.gia_sp
+            FROM $chitietTable
+            JOIN sanpham ON $chitietTable.id_sp = sanpham.id
+            WHERE $chitietTable.id_dh = :id_dh";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':id_dh', $id_dh);
+        $stmt->bindParam(':id_dh', $id_dh, \PDO::PARAM_INT);
         $stmt->execute();
+
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function getOrderById($id_dh)
@@ -101,7 +100,6 @@ class Order extends Model
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
-
 
 
 }

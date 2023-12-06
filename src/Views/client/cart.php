@@ -33,9 +33,12 @@
                 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
         </style>
+
+
     </head>
 
     <body>
+
 
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
@@ -68,7 +71,8 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="/editTaiKhoan">Tài khoản của tôi</a>
                                 <form action="" method="post">
-                                    <button class="dropdown-item" type="submit" name="btn-oder">Đơn Mua</button>
+                                    <a href="/order/showOrder" class="dropdown-item" type="submit" name="btn-oder">Đơn
+                                        Mua</a>
                                 </form>
                                 <form method="post">
                                     <button class="dropdown-item" type="submit" name="logout">Đăng Xuất</button>
@@ -123,14 +127,16 @@
                                                     <i class="fas fa-trash fa-2x "></i></button>
                                             </form>
                                             <form action="/order/createOrder" method="post">
-                                                <input value="Mua Hàng Ngay" name="btn-checkout" type="submit"
-                                                    class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                                                    title="Đặt hàng">
+                                                <input type="hidden" name="id_sp" value="<?php echo $item['id']; ?>">
+                                                <div class="input-group">
+                                                    <input type="number" name="so_luong" class="form-control" value="1"
+                                                        min="1" required>
+                                                    <!-- <button type="submit" name="btn-checkoutProduct"
+                                                        class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                                                        title="Đặt hàng">Mua Hàng Ngay</button> -->
+                                                </div>
                                             </form>
-
-
                                         </div>
-
                                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 
                                             <div class="d-flex mb-4" style="max-width: 300px">
@@ -209,6 +215,8 @@
                 </div>
             </div>
         </section>
+
+
     </body>
 
 </html>
