@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Sản phẩm</h5>
+                        <h5>Quản Lý Dơn Hàng</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Sản phẩm</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Quản Lý Dơn Hàng</a> </li>
                     </ul>
                 </div>
             </div>
@@ -31,8 +31,8 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Danh sách Sản phẩm</h5>
-                            <a href="/admin/sanpham/create" class="btn btn-info">Thêm</a>
+                            <h5>Quản Lý Dơn Hàng</h5>
+                            <!-- <a href="/admin/sanpham/create" class="btn btn-info">Thêm</a> -->
                         </div>
 
                         <div class="row">
@@ -45,31 +45,24 @@
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>Name</th>
-                                                        <th>IMG</th>
-                                                        <th>Mô Tả</th>
-                                                        <th>Giá</th>
-                                                        <th>Số Lượng</th>
-                                                        <th>Tên danh mục</th>
-                                                        <th>Lượt xem </th>
+                                                        <th>Ngày Đặt Hàng</th>
+                                                        <th>Id_user</th>
+                                                        <th>Tổng Tiền</th>
+                                                        <th>Trạng Thái</th>
                                                         <th>Action </th>
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                    <?php foreach ($sanpham as $item) : ?>
+                                                    <?php foreach ($donhang as $item) : ?>
                                                         <tr>
-
                                                             <td><?= $item['id'] ?></td>
-                                                            <td><?= $item['ten_sp'] ?></td>
-                                                            <td><img src="<?= $item['img_sp'] ?>" alt="" height="50px" width="50px"></td>
-                                                            <td><?= $item['mota_sp'] ?></td>
-                                                            <td><?= $item['gia_sp'] ?></td>
-                                                            <td><?= $item['soluong_sp'] ?></td>
-                                                            <td><?= $arrayCategoryIdName[$item['id_dm']] ?></td>
-                                                            <td><?= $item['luotxem'] ?></td>
+                                                            <td><?= $item['ngaydathang'] ?></td>
+                                                            <td><?=  $arrayIdUser[$item['id_user']] ?></td>
+                                                            <td><?= $item['tongtien'] ?></td>
+                                                            <td><?= $item['trangthai'] ?></td>
                                                             <td>
-                                                                <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm mt-2">Cập nhật</a>
+                                                                <a href="/admin/sanpham/update?id=<?= $item['id'] ?>" class="btn btn-primary btn-sm mt-2">Chờ Xác Nhận</a>
 
                                                                 <form action="/admin/sanpham/delete?id=<?= $item['id'] ?>" method="post">
                                                                     <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>

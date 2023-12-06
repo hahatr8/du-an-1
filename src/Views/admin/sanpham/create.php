@@ -51,7 +51,7 @@
                                                 <?php foreach ($categories as $category) : ?>
                                                     <option value="<?= $category['id'] ?>"><?= $category['ten_dm'] ?></option>;
                                                 <?php endforeach; ?>
-                                            </select>
+                                            </select><br><br>
 
                                             <label for="img_sp">Img</label>
                                             <input type="file" name="img" id="img_sp" class="form-control" required>

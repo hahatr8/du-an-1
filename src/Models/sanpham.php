@@ -4,8 +4,7 @@ namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class SanPham extends Model
-{
+class SanPham extends Model {
     protected $table = 'sanpham';
     protected $columns = [
         'ten_sp',
@@ -15,14 +14,14 @@ class SanPham extends Model
         'soluong_sp',
         'luotxem',
         'id_dm',
+        // 'id_color',
+        // 'id_size',
     ];
-    public function getAll()
-    {
+    public function getAll() {
         return $this->all();
     }
 
-    public function sproduct($id)
-    {
+    public function sproduct($id) {
         $sql = "
             SELECT 
                 s.id s_id,
@@ -34,7 +33,7 @@ class SanPham extends Model
                 s.id_dm s_id_dm,
                 s.luotxem s_luotxem
             FROM sanpham s
-            WHERE s.id =" . $id;
+            WHERE s.id =".$id;
 
         $stmt = $this->conn->prepare($sql);
 
@@ -44,8 +43,7 @@ class SanPham extends Model
 
         return $stmt->fetchAll();
     }
-    public function getALLCategoryID($id_dm)
-    {
+    public function getALLCategoryID($id_dm) {
         $sql = "
             SELECT 
                 s.id s_id,
@@ -57,7 +55,9 @@ class SanPham extends Model
                 s.id_dm s_id_dm,
                 s.luotxem s_luotxem
             FROM sanpham s
-            WHERE s.id_dm =" . $id_dm;
+            WHERE s.id_dm =".$id_dm." ORDER BY s.id DESC LIMIT 0,4";
+
+
 
         $stmt = $this->conn->prepare($sql);
 

@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-        <script>
-            function togglePasswordVisibility() {
-                var passwordField = document.getElementById("pass_user");
-                if (passwordField.type === "password") {
-                    passwordField.type = "text";
-                } else {
-                    passwordField.type = "password";
-                }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <?php require_once 'components-home/head.php' ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("pass_user");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
             }
-        </script>
+        }
+    </script>
+    <style>
+        #wrapper {
+            margin-top: 200px;
+        }
+    </style>
+</head>
 
-    </head>
+<body>
+    <?php require_once 'components-home/header.php' ?>
+   
 
-    <body>
         <div id="wrapper">
             <div class="container">
                 <div class="row justify-content-around">
@@ -40,12 +48,15 @@
                         <input type="submit" name="btn-submit-login" value="Đăng Nhập" class="btn-primary btn-block">
                         <br>
 
-                    <a class="btn btn-success" href="/register">Đăng kí tài khoản mới</a>
+                        <a class="btn btn-success" href="/register">Đăng kí tài khoản mới</a>
 
                     </form>
                 </div>
+          
             </div>
         </div>
-    </body>
+        </div>
+        <?php require_once 'components-home/foot.php' ?>
+</body>
 
 </html>
