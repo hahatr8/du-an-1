@@ -21,7 +21,6 @@ class LoginController extends Controller
             $isLoggedIn = $loginModel->authenticate($username, $password);
 
             if ($isLoggedIn) {
-                // Lưu thông tin đăng nhập vào session
                 $_SESSION['tk_user'] = $username;
 
 

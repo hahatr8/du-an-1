@@ -59,4 +59,5 @@ class RegisterController extends Controller
             $this->render('client/register');
         }
     }
+  
 }

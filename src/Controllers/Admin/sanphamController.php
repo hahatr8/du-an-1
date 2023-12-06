@@ -7,6 +7,7 @@ use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Sanpham;
 
 
+
 class SanphamController extends Controller
 {
     /*
@@ -16,12 +17,14 @@ class SanphamController extends Controller
     {
        $sanpham = (new SanPham())->all();
         $categories = (new Category())->all();
- 
+       
+
         $arrayCategoryIdName = [];
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
         }
 
+        
         $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName]);
     }
 
@@ -36,6 +39,7 @@ class SanphamController extends Controller
                 'soluong_sp' => $_POST['soluong_sp'],
                 'luotxem' => $_POST['luotxem'],
                 'id_dm' => $_POST['id_dm'],
+               
             ];
 
             $data['img_sp'] = null;
@@ -56,7 +60,8 @@ class SanphamController extends Controller
             header('Location: /admin/sanpham');
         }
         $categories = (new Category())->all();
-        $this->renderAdmin('sanpham/create', ["categories" => $categories]);
+       
+        $this->renderAdmin('sanpham/create', ["categories" => $categories ]);
     }
 
 
@@ -124,4 +129,9 @@ class SanphamController extends Controller
 
         header('Location: /admin/sanpham');
     }
+
+    // public function timkiem(){
+    //     if(isset($_POST['timkiem'])){
+    //         $kyw = $_POST['kyw'];
+    // }
 }

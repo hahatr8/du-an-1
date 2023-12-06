@@ -6,7 +6,7 @@
         <li><a href="">Bé gái <i class="feather icon-chevron-down"></i></a>
             <ul class="sub-menu">
                 <?php foreach ($GLOBALS['categoryForMenu'] as $categorie) : ?>
-                    <li><a href=""><?= $categorie['ten_dm'] ?></a></li>
+                    <li><a href="/shops?id_dm=<?= $categorie['id'] ?>"><?= $categorie['ten_dm'] ?></a></li>
                 <?php endforeach ?>
             </ul>
         </li>
@@ -31,8 +31,12 @@
     </div>
     <div class="others">
         <li><input type="search" placeholder="Tìm kiếm"><a href=""><i class="feather icon-search"></i></a></li>
-        <li><a href="/login" class="feather icon-user"></a></li> 
+        <li><a href="/login" class="feather icon-user"></a></li>
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
-        <li><a href="" class="feather icon-log-out"></a></li>
+        <li><a href="" class="feather icon-log-out" name="logout"></a></li>
+        
+        <!-- <form method="post">
+            <button class="dropdown-item" type="submit" name="logout">Đăng Xuất</button>
+        </form> -->
     </div>
 </div>

@@ -15,6 +15,8 @@ class SanPham extends Model
         'soluong_sp',
         'luotxem',
         'id_dm',
+        // 'id_color',
+        // 'id_size',
     ];
     public function getAll()
     {
@@ -57,7 +59,10 @@ class SanPham extends Model
                 s.id_dm s_id_dm,
                 s.luotxem s_luotxem
             FROM sanpham s
-            WHERE s.id_dm =" . $id_dm;
+
+            WHERE s.id_dm =" . $id_dm . " ORDER BY s.id DESC LIMIT 0,4";
+
+
 
         $stmt = $this->conn->prepare($sql);
 

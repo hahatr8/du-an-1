@@ -66,7 +66,7 @@
                                 echo "$username" ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Tài khoản của tôi</a>
+                                <a class="dropdown-item" href="/editTaiKhoan">Tài khoản của tôi</a>
                                 <form action="" method="post">
                                     <button class="dropdown-item" type="submit" name="btn-oder">Đơn Mua</button>
                                 </form>
@@ -122,10 +122,11 @@
                                                     title="Remove item">
                                                     <i class="fas fa-trash fa-2x "></i></button>
                                             </form>
-                                            <button type="button" class="btn btn-primary btn-sm me-1 mb-2"
-                                                data-mdb-toggle="tooltip" title="Place order">
-                                                <i class="">Mua Hàng Ngay</i>
-                                            </button>
+                                            <form action="/order/createOrder" method="post">
+                                                <input value="Mua Hàng Ngay" name="btn-checkout" type="submit"
+                                                    class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                                                    title="Đặt hàng">
+                                            </form>
 
 
                                         </div>
@@ -196,9 +197,12 @@
                                     </li>
                                 </ul>
 
-                                <button type="button" class="btn btn-primary btn-lg btn-block">
-                                    Go to checkout
-                                </button>
+
+                                <form action="/order/createOrder" method="post">
+                                    <input value="checkout" name="btn-checkout" type="submit"
+                                        class="btn btn-primary btn-lg btn-block">
+                                    </input>
+                                </form>
                             </div>
                         </div>
                     </div>
