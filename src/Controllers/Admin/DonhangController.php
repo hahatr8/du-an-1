@@ -3,7 +3,7 @@
 namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
-use Ductong\BaseMvc\Models\DonHang;
+use Ductong\BaseMvc\Models\Order;
 use Ductong\BaseMvc\Models\Login;
 
 class DonhangController extends Controller
@@ -12,7 +12,7 @@ class DonhangController extends Controller
     /* Lấy danh sách */
     public function index()
     {
-        $donhang = (new DonHang())->all();
+        $donhang = (new Order())->all();
         $login = (new Login())->all();
        
         $arrayIdUser = [];

@@ -26,23 +26,7 @@
 
 <body>
     <?php require_once 'components-home/header.php' ?>
-    <?php
-    if (isset($_SESSION['tk_user'])) {
-        $_SESSION['$username']
-    ?>
-        <div class="row justify-content-around">
-            <form action="" method="post" class="col-md-6 bg-light p-3 my-3">
-                <H1 class="text-center text-uppercase h3 py-3"> Xin Chào : <?php $username = $_SESSION['tk_user'];
-                                                                            echo "$username" ?> </H1>
-                    
-            </form>
-        </div>
-    <?php
-
-    } else {
-
-    ?>
-
+   
 
         <div id="wrapper">
             <div class="container">
@@ -68,7 +52,7 @@
 
                     </form>
                 </div>
-            <?php } ?>
+          
             </div>
         </div>
         </div>
