@@ -49,28 +49,19 @@ class SanPham extends Model
     public function getALLCategoryID($id_dm)
     {
         $sql = "
-        SELECT 
-            s.id s_id,
-            s.ten_sp s_ten_sp,
-            s.img_sp s_img_sp,
-            s.mota_sp s_mota_sp,
-            s.gia_sp s_gia_sp,
-            s.soluong_sp s_soluong_sp,
-            s.luotxem s_luotxem,
-            s.id_dm s_id_dm,
-            d.id d_id,
-            d.ten_dm d_ten_dm
-        FORM sanpham s 
-        JOIN danhmuc d 
-            ON s.id_dm = d.id
-        WHERE 
-            s.id_dm = '.$id_dm.'
-        LIMIT 4    
-        ";
+            SELECT 
+                s.id s_id,
+                s.ten_sp s_ten_sp,
+                s.img_sp s_img_sp,
+                s.mota_sp s_mota_sp,
+                s.gia_sp s_gia_sp,
+                s.soluong_sp s_soluong_sp,
+                s.id_dm s_id_dm,
+                s.luotxem s_luotxem
+            FROM sanpham s
+            WHERE s.id_dm =" . $id_dm . " ORDER BY s.id DESC LIMIT 0,4";
 
         $stmt = $this->conn->prepare($sql);
-
-        $stmt->bindParam(':categoryID', $categoryID);
 
         $stmt->execute();
 

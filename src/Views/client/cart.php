@@ -66,7 +66,7 @@
                                 echo "$username" ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Tài khoản của tôi</a>
+                                <a class="dropdown-item" href="/editTaiKhoan">Tài khoản của tôi</a>
                                 <form action="" method="post">
                                     <button class="dropdown-item" type="submit" name="btn-oder">Đơn Mua</button>
                                 </form>

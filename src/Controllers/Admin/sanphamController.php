@@ -5,8 +5,7 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Sanpham;
-use Ductong\BaseMvc\Models\Color;
-use Ductong\BaseMvc\Models\Size;
+
 
 
 class SanphamController extends Controller
@@ -18,27 +17,15 @@ class SanphamController extends Controller
     {
        $sanpham = (new SanPham())->all();
         $categories = (new Category())->all();
-        $color = (new Color())->all();
-        $size = (new Size())->all();
+       
 
-
-        
         $arrayCategoryIdName = [];
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['ten_dm'];
         }
 
-        $arrayColorIdName = [];
-        foreach ($color as $mau) {
-            $arrayColorIdName[$mau['id']] = $mau['ten_color'];
-        }
-
-        $arraySizeIdName = [];
-        foreach ($size as $item) {
-            $arraySizeIdName[$item['id']] = $item=['ten_size'];
-        }
-
-        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName, "arrayColorIdName" => $arrayColorIdName,"arraySizeIdName" => $arraySizeIdName ]);
+        
+        $this->renderAdmin('sanpham/index', ['sanpham' => $sanpham, "arrayCategoryIdName" => $arrayCategoryIdName]);
     }
 
     public function create()
@@ -52,8 +39,7 @@ class SanphamController extends Controller
                 'soluong_sp' => $_POST['soluong_sp'],
                 'luotxem' => $_POST['luotxem'],
                 'id_dm' => $_POST['id_dm'],
-                'id_color'=> $_POST['id_color'],
-                'id_size'=> $_POST['id_size'],
+               
             ];
 
             $data['img_sp'] = null;
@@ -74,9 +60,8 @@ class SanphamController extends Controller
             header('Location: /admin/sanpham');
         }
         $categories = (new Category())->all();
-        $color = (new Color())->all();
-        $size = (new Size())->all();
-        $this->renderAdmin('sanpham/create', ["categories" => $categories , "color" => $color,"size"=> $size]);
+       
+        $this->renderAdmin('sanpham/create', ["categories" => $categories ]);
     }
 
 

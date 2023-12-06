@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php require_once 'components-home/head.php' ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
     <script>
@@ -17,10 +18,16 @@
             }
         }
     </script>
+    <Style>
+        #wrapper{
+            margin-top: 180px;
+        }
+    </Style>
 
 </head>
 
 <body>
+<?php require_once 'components-home/header.php' ?>
     <div id="wrapper">
         <div class="container">
             <div class="row justify-content-around">
@@ -63,6 +70,7 @@
             </div>
         </div>
     </div>
+    <?php require_once 'components-home/foot.php' ?>
 </body>
 
 </html>

@@ -14,6 +14,15 @@
                 </li>
 
                 <li class>
+                    <a href="/admin/donhang" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-aperture rotate-refresh"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý Đơn Hàng</span>
+                    </a>
+                </li>
+
+                <li class>
                     <a href="/admin/users" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-layers"></i>
@@ -28,24 +37,6 @@
                             <i class="feather icon-gitlab"></i>
                         </span>
                         <span class="pcoded-mtext">Quản lý Categories</span>
-                    </a>
-                </li>
-
-                <li class>
-                    <a href="/admin/color" class="waves-effect waves-dark">
-                        <span class="pcoded-micon">
-                            <i class="feather icon-gitlab"></i>
-                        </span>
-                        <span class="pcoded-mtext">Quản lý color</span>
-                    </a>
-                </li>
-
-                <li class>
-                    <a href="/admin/size" class="waves-effect waves-dark">
-                        <span class="pcoded-micon">
-                            <i class="feather icon-gitlab"></i>
-                        </span>
-                        <span class="pcoded-mtext">Quản lý Size</span>
                     </a>
                 </li>
 
