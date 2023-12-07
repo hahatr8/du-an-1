@@ -19,9 +19,12 @@ class HomeController extends Controller
         $sanphamModel = new Sanpham();
         $danhSachSanPham = $sanphamModel->getAll();
 
+
+        $danhSachSanPhamHot = (new Sanpham())->productHot();
+
         return $this->render('client/home', [
             "danhSachSanPham" => $danhSachSanPham,
-            // "listCategories" => $listCategories,
+            "danhSachSanPhamHot" => $danhSachSanPhamHot,
         ]);
     }
 }

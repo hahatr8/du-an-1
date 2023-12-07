@@ -63,7 +63,8 @@
                 <input type="radio" name="size" id="2Y-11-12kg" value="2Y-11-12kg"> XL
                 <input type="radio" name="size" id="3Y-12-13kg" value="3Y-12-13kg"> XXL
             </div>
-            <h6>Số lượng: <?= $sanpham[0]['s_soluong_sp'] ?></h6>
+            <h6>Số lượng sản phẩm: <?= $sanpham[0]['s_soluong_sp'] ?></h6>
+            <h6>Số lượt xem: <?= $sanpham[0]['s_luotxem'] ?></h6>
             <input type="number" value="1">
             <button class="normal w">Thêm vào giỏ hàng</button>
             <button class="normal">Mua</button>
