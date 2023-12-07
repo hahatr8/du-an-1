@@ -9,6 +9,7 @@ use Ductong\BaseMvc\Controllers\Admin\DonHangController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\RegisterController;
 use Ductong\BaseMvc\Controllers\Client\UpdateUserController;
+use Ductong\BaseMvc\Controllers\Client\SearchController;
 
 
 
@@ -28,6 +29,7 @@ $router->addRoute('/register', RegisterController::class, 'create');
 $router->addRoute('/login', LoginController::class, 'login');
 
 $router->addRoute('/shop', ShopController::class, 'allProduct');
+$router->addRoute('/search', SearchController::class, 'search');
 
 
 $router->addRoute('/sproduct', SproductController::class, 'loadProductByCategory');

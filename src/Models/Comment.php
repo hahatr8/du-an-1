@@ -20,8 +20,19 @@ class Comment extends Model
     public function loadComment($id)
     {
         $sql = "
-            SELECT * FROM binhluan 
-            WHERE id_sp = " . $id;
+            SELECT 
+                b.id b_id,
+                b.id_user b_id_user,
+                b.ngaybinhluan b_ngaybinhluan,
+                b.noidung b_noidung,
+                b.id_sp b_id_sp,
+                t.id t_id,
+                t.tk_user t_tk_user
+            FROM binhluan b
+            JOIN taikhoan t 
+                ON b.id_user = t.id
+            WHERE b.id_sp = " . $id . "
+            ORDER BY b.id DESC";
 
         $stmt = $this->conn->prepare($sql);
 
