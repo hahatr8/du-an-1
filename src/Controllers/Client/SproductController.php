@@ -48,8 +48,9 @@ class SproductController extends Controller
             (new Comment())->insert($data);
 
             $url = $_POST['id_sp'];
+            $url1 = $_POST['id_dm'];
 
-            header('Location: /sproduct?id_sp=' . $url . '');
+            header('Location: /sproduct?id_sp=' . $url . '&id_dm='.$url1.'');
         }
         return $this->render("client/sproduct");
     }
