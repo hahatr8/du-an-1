@@ -13,7 +13,7 @@ class Cart extends Model
         'soluong_sp',
     ];
 
-
+    // public function getTotalPrice($items)
     public function getItems($id)
     {
         $sql = "SELECT * FROM giohang WHERE id_user = {$id} ORDER BY id DESC";
@@ -137,12 +137,5 @@ class Cart extends Model
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id_user', $idUser);
         $stmt->execute();
-
-
     }
-
-
-
-
-
 }
