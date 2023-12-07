@@ -97,4 +97,39 @@ class SanPham extends Model
 
         return $stmt->fetchAll();
     }
+
+    public function updateView($id)
+    {
+        $sql = "
+            UPDATE
+                sanpham
+            SET
+                luotxem = luotxem+1 
+            WHERE id =" . $id;
+
+
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+    public function productHot()
+    {
+        $sql = "
+            SELECT * FROM
+                 sanpham
+            ORDER BY luotxem DESC LIMIT 0,9";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
 }

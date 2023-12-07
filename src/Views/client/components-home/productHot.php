@@ -1,8 +1,8 @@
 <div id="product1" class="section-p1">
-    <h2>Sản phẩm nổi bật</h2>
+    <h2>Sản phẩm bán chạy</h2>
     <p>Bộ sưu tập thiết kế hiện đại</p>
     <div class="pro-container">
-        <?php foreach ($danhSachSanPham as $item) : ?>
+        <?php foreach ($danhSachSanPhamHot as $item) : ?>
             <input type="hidden" name="id" value="<?= $item['id'] ?>">
             <div class="pro" name="btn" onclick="window.location.href='/sproduct?id_sp=<?= $item['id'] ?>&id_dm=<?= $item['id_dm'] ?>';">
                 <img src="<?= $item['img_sp'] ?>" alt="">

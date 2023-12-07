@@ -20,6 +20,7 @@ class SproductController extends Controller
         if (isset($_GET['id_sp'])) {
             $id = $_GET['id_sp'];
             $sanpham = (new SanPham())->sproduct($id);
+            $updateView = (new SanPham())->updateView($id);
         }
 
         $commentsModel = new Comment();
@@ -32,6 +33,7 @@ class SproductController extends Controller
             "sanpham" => $sanpham,
             "danhSachComments" => $danhSachComments,
             "loads" => $loads,
+            "updateView" => $updateView
         ]);
     }
 
