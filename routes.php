@@ -18,6 +18,7 @@ use Ductong\BaseMvc\Controllers\Client\SproductController;
 use Ductong\BaseMvc\Controllers\Client\LoginController;
 use Ductong\BaseMvc\Controllers\Client\OrderController;
 use Ductong\BaseMvc\Controllers\Client\ShopController;
+use Ductong\BaseMvc\Controllers\Client\ShopsController;
 
 use Ductong\BaseMvc\Router;
 
@@ -27,6 +28,8 @@ $router->addRoute('/indexTaiKhoan', UpdateUserController::class, 'index');
 $router->addRoute('/editTaiKhoan', UpdateUserController::class, 'update');
 $router->addRoute('/register', RegisterController::class, 'create');
 $router->addRoute('/login', LoginController::class, 'login');
+
+$router->addRoute('/shops', ShopsController::class, 'index');
 
 $router->addRoute('/shop', ShopController::class, 'allProduct');
 $router->addRoute('/search', SearchController::class, 'search');

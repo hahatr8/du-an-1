@@ -42,7 +42,7 @@
 
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="http://du-an-1.test/">
+                <a href="/">
                     <img class="logo" src="/assets/client//assets/img/logo.jpg">
                 </a>
                 <a class="navbar-brand" href="javascript:void(0)"></a>
