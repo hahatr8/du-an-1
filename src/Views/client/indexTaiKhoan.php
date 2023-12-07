@@ -35,19 +35,23 @@
                         <h1>Tài Khoản Của Tôi</h1>
 
                         <label for="name">Name</label>
-                        <input type="text" name="tk_user" class="form-control" value="<?= $user['tk_user']; ?>">
+                        <input type="text" name="tk_user" class="form-control" value="<?= $user['tk_user']; ?> "
+                            readonly>
 
                         <label for="name" class="mt-3">Địa Chỉ</label>
-                        <input type="text" name="diachi_user" class="form-control" value="<?= $user['diachi_user'] ?>">
+                        <input type="text" name="diachi_user" class="form-control" value="<?= $user['diachi_user'] ?>"
+                            readonly>
 
                         <label for="name" class="mt-3">Số Điện Thoại</label>
-                        <input type="text" name="sdt_user" class="form-control" value="<?= $user['sdt_user'] ?>">
+                        <input type="text" name="sdt_user" class="form-control" value="<?= $user['sdt_user'] ?>"
+                            readonly>
 
                         <label for="name" class="mt-3">Email</label>
-                        <input type="email" name="email_user" class="form-control" value="<?= $user['email_user'] ?>">
+                        <input type="email" name="email_user" class="form-control" value="<?= $user['email_user'] ?>"
+                            readonly>
 
                         <label for="name" class="mt-3">Đối Tương</label>
-                        <input type="text" name="role" class="form-control" value="Khách Hàng">
+                        <input type="text" name="role" class="form-control" value="Khách Hàng" readonly>
 
 
                         <a href="/editTaiKhoan" class="btn btn-primary mt-3">Chỉnh Sửa Thông Tin </a>

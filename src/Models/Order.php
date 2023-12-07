@@ -110,4 +110,14 @@ class Order extends Model
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+
+    public function updateTrangThai($donhangId, $trangthai)
+    {
+        $sql = "UPDATE $this->table SET trangthai = :trangthai WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $donhangId, \PDO::PARAM_INT);
+        $stmt->bindParam(':trangthai', $trangthai, \PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
 }

@@ -30,11 +30,18 @@
         <li><a href="">DS cửa hàng</a></li>
     </div>
     <div class="others">
-        <li><input type="search" placeholder="Tìm kiếm"><a href=""><i class="feather icon-search"></i></a></li>
+        <form action="/search" method="POST">
+            <div class="input-group input-group-button" style="margin-top: 20px;">
+                <input type="text" id="search-friends" name="search" class="form-control" placeholder="Tìm kiếm" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary waves-effect waves-light" type="sunmit"><i class="feather icon-search"></i></button>
+                </div>
+            </div>
+        </form>
         <li><a href="/login" class="feather icon-user"></a></li>
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out" name="logout"></a></li>
-        
+
         <!-- <form method="post">
             <button class="dropdown-item" type="submit" name="logout">Đăng Xuất</button>
         </form> -->
