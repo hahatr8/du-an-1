@@ -22,7 +22,7 @@ use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
-$router->addRoute('/index', UpdateUserController::class, 'index');
+$router->addRoute('/indexTaiKhoan', UpdateUserController::class, 'index');
 $router->addRoute('/editTaiKhoan', UpdateUserController::class, 'update');
 $router->addRoute('/register', RegisterController::class, 'create');
 $router->addRoute('/login', LoginController::class, 'login');
