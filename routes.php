@@ -42,6 +42,9 @@ $router->addRoute('/cart', CartController::class, 'index');
 $router->addRoute('/cart/delete', CartController::class, 'delete');
 $router->addRoute('/cart/updateQuantity', CartController::class, 'updateQuantity');
 $router->addRoute('/session_destroy', CartController::class, ' session_destroy');
+$router->addRoute('/cart/updateQuantity', CartController::class, ' updateQuantity');
+
+
 
 
 $router->addRoute('/order/cancelOrder', OrderController::class, 'cancelOrder');
@@ -50,17 +53,7 @@ $router->addRoute('/order/showOrder', OrderController::class, 'showOrder');
 $router->addRoute('/order/showOrderDetails', OrderController::class, 'showOrderDetails');
 
 
-
-
-
-
-
-
-
-
-
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
-
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
 $router->addRoute('/admin/users/update', UserController::class, 'update');

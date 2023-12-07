@@ -101,5 +101,13 @@ class Order extends Model
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function getOrdersByUser($id_user)
+    {
+        $sql = "SELECT * FROM $this->table WHERE id_user = :id_user";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
 }

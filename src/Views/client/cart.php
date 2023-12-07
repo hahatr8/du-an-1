@@ -126,37 +126,33 @@
                                                     title="Remove item">
                                                     <i class="fas fa-trash fa-2x "></i></button>
                                             </form>
-                                            <form action="/order/createOrder" method="post">
-                                                <input type="hidden" name="id_sp" value="<?php echo $item['id']; ?>">
-                                                <div class="input-group">
-                                                    <input type="number" name="so_luong" class="form-control" value="1"
-                                                        min="1" required>
-                                                    <!-- <button type="submit" name="btn-checkoutProduct"
-                                                        class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                                                        title="Đặt hàng">Mua Hàng Ngay</button> -->
-                                                </div>
-                                            </form>
                                         </div>
                                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
-                                            <div class="d-flex mb-4" style="max-width: 300px">
-                                                <button class="btn btn-primary px-3 me-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-
-                                                <div class="form-outline">
-                                                    <input style="width: 60px;" id="form1" min="1"
-                                                        value="<?php echo $item['soluong_sp']; ?>" name=" quantity" min="1"
-                                                        type="number" class="form-control" />
-                                                    <label class="form-label" for="form1"></label>
-                                                </div>
-
-                                                <button class="btn btn-primary px-3 ms-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                            </div>
+                                            <td>
+                                                <form action="/cart/updateQuantity" method="post">
+                                                    <input type="hidden" name="cartItemId"
+                                                        value="<?php echo $item['id_sp']; ?>">
+                                                    <div class="d-flex mb-4" style="max-width: 300px">
+                                                        <button class="btn btn-primary px-3 me-2" type="button"
+                                                            onclick="decreaseQuantity(this)">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <div class="form-outline">
+                                                            <input style="width: 60px;"
+                                                                id="quantity<?php echo $item['id_sp']; ?>" min="1"
+                                                                value="<?php echo $item['soluong_sp']; ?>"
+                                                                name="newQuantity" min="1" type="number"
+                                                                class="form-control" onchange="updateQuantity(this)">
+                                                            <label class="form-label"
+                                                                for="quantity<?php echo $item['id_sp']; ?>"></label>
+                                                        </div>
+                                                        <button class="btn btn-primary px-3 ms-2" type="button"
+                                                            onclick="increaseQuantity(this)">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </td>
                                             <p class="text-start text-md-center">
                                                 <strong>Thành Tiền: <?php echo $item['subtotal']; ?>VNĐ</strong>
                                             </p>
@@ -220,3 +216,23 @@
     </body>
 
 </html>
+<script>
+    function decreaseQuantity(button) {
+        var input = button.parentNode.querySelector('input[type=number]');
+        if (input.value > 1) {
+            input.stepDown();
+            updateQuantity(input);
+        }
+    }
+
+    function increaseQuantity(button) {
+        var input = button.parentNode.querySelector('input[type=number]');
+        input.stepUp();
+        updateQuantity(input);
+    }
+
+    function updateQuantity(input) {
+        var form = input.parentNode.parentNode;
+        form.submit();
+    }
+</script>
