@@ -77,5 +77,5 @@ $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
 
 $router->addRoute('/admin/donhang', DonHangController::class, 'index');
-//clientColorController
-// $router->addRoute('/client/trangchu', LoadSPController::class, 'loadAll');
+$router->addRoute('/admin/donhang/updateTrangThai', DonHangController::class, 'updateTrangThai');
+
