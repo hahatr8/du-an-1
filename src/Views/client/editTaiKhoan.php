@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row justify-content-around">
                     <form action="" method="post">
-                        <h1>Thông Tin Tài Khoản</h1>
+                        <h1>Cập Nhật Thông Tin</h1>
 
                         <div class="form-group">
                             <label for="name">Tên</label>
