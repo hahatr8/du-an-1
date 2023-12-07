@@ -109,8 +109,9 @@
                                                     <?php
                                                     $trangThaiText = [
                                                         0 => "Chờ xác nhận",
-                                                        1 => "Đang giao",
-                                                        2 => "Giao thành công"
+                                                        1 => "Đã  Xác Nhận",
+                                                        2 => "Đang Giao",
+                                                        3 => "Giao Thành Công"
                                                     ];
                                                     $trangThai = isset($trangThaiText[$order['trangthai']]) ? $trangThaiText[$order['trangthai']] : "Trạng thái không xác định";
                                                     echo $trangThai;
