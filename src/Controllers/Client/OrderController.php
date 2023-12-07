@@ -7,21 +7,23 @@ use Ductong\BaseMvc\Models\Order;
 
 require_once 'global.php';
 
-class OrderController extends Controller {
-    public function createOrder() {
-        if(!isset($_SESSION['id_user'])) {
+class OrderController extends Controller
+{
+    public function createOrder()
+    {
+        if (!isset($_SESSION['id_user'])) {
             echo 'Bạn chưa đăng nhập';
             header('Location: /login');
             return;
         }
 
-        if(isset($_POST['btn-checkout'])) {
+        if (isset($_POST['btn-checkout'])) {
             $id_user = $_SESSION['id_user'];
             $order = new Order();
             // Gọi phương thức createOrder()  để tạo đơn hàng
             $id_dh = $order->createOrder($id_user);
 
-            if($id_dh) {
+            if ($id_dh) {
                 header("Location: /order/showOrder");
                 exit;
             } else {
@@ -29,7 +31,7 @@ class OrderController extends Controller {
             }
         }
 
-        if(!isset($_SESSION['id_user'])) {
+        if (!isset($_SESSION['id_user'])) {
             echo 'Bạn chưa đăng nhập';
             header('Location: /login');
             return;
@@ -37,8 +39,9 @@ class OrderController extends Controller {
 
     }
 
-    public function showOrder() {
-        if(!isset($_SESSION['id_user'])) {
+    public function showOrder()
+    {
+        if (!isset($_SESSION['id_user'])) {
             echo 'Bạn chưa đăng nhập';
             header('Location: /login');
             return;
@@ -49,7 +52,7 @@ class OrderController extends Controller {
         $orders = $order->getOrdersByUser($id_user);
 
 
-        if(isset($_GET["btn-orderDetails"])) {
+        if (isset($_GET["btn-orderDetails"])) {
 
             $this->showOrderDetails();
             return;
@@ -58,14 +61,15 @@ class OrderController extends Controller {
 
     }
 
-    public function showOrderDetails() {
-        if(!isset($_SESSION['id_user'])) {
+    public function showOrderDetails()
+    {
+        if (!isset($_SESSION['id_user'])) {
             echo 'Bạn chưa đăng nhập';
             header('Location: /login');
             return;
         }
 
-        if(isset($_GET['id_dh'])) {
+        if (isset($_GET['id_dh'])) {
             $id_dh = $_GET['id_dh'];
 
             $order = new Order();
