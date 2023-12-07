@@ -62,7 +62,7 @@
                     </div>
 
                     <button type="submit" name="button-submit" class="btn btn-success">Đăng kí Tài Khoản</button>
-                    <a class="btn btn-primary" href="http://du-an-1.test/login">Quay lại Đăng Nhập</a>
+                    <a class="btn btn-primary" href="/login">Quay lại Đăng Nhập</a>
 
                 </form>
 

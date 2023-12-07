@@ -84,6 +84,7 @@
         <form action="/sproduct/create" method="POST">
             <input type="hidden" name="id_sp" value="<?= $sanpham[0]['s_id'] ?>">
             <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+            <input type="hidden" name="id_dm" value="<?= $sanpham[0]['s_id_dm'] ?>">
             <textarea id="comment-input" name="noidung" placeholder="Nhập bình luận của bạn..."></textarea>
             <button id="comment-submit" type="submit" name="btn-submit">Gửi</button>
         </form>
