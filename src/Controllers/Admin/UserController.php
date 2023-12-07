@@ -5,19 +5,22 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\User;
 
+// $_SESSION['user'] = $_POST['tk_user']['pass_user'];
 class UserController extends Controller
 {
     /*
         Đây là hàm hiển thị danh sách user
     */
-    public function index() {
+    public function index()
+    {
         $users = (new User)->all();
-        
+
         $this->renderAdmin('users/index', ['users' => $users]);
     }
 
-    public function create() {
-        if (isset($_POST['btn-submit'])) { 
+    public function create()
+    {
+        if (isset($_POST['btn-submit-login'])) {
             $data = [
                 'tk_user' => $_POST['tk_user'],
                 'pass_user' => $_POST['pass_user'],
@@ -35,8 +38,9 @@ class UserController extends Controller
         $this->renderAdmin('users/create');
     }
 
-    public function update() {
-        if (isset($_POST['btn-submit'])) { 
+    public function update()
+    {
+        if (isset($_POST['btn-submit'])) {
             $data = [
                 'tk_user' => $_POST['tk_user'],
                 'pass_user' => $_POST['pass_user'],
@@ -58,7 +62,8 @@ class UserController extends Controller
         $this->renderAdmin('users/update', ['user' => $user]);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $conditions = [
             ['id', '=', $_GET['id']]
         ];
@@ -67,7 +72,5 @@ class UserController extends Controller
 
         header('Location: /admin/users');
     }
+
 }
-
-
-

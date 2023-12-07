@@ -41,12 +41,13 @@
                                 
                                     <div class="card-block">
                                         <div class="dt-responsive table-responsive">
-                                            <table class="table" id="simpletable">
+                                            <table class="table table-striped table-bordered nowrap" id="simpletable">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Nội dung</th>
                                                         <th>Ngày bình luận</th>
+                                                        <th>Người bình luận</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -56,11 +57,12 @@
                                                             <td><?= $Comment['id'] ?></td>
                                                             <td><?= $Comment['noidung'] ?></td>
                                                             <td><?= $Comment['ngaybinhluan'] ?></td>
+                                                            <td><?= $Comment['id_user'] ?></td>
                                                             <td>
                                                                 <a href="/admin/comments/update?id=<?= $Comment['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
                                                                 <form action="/admin/comments/delete?id=<?= $Comment['id'] ?>" method="post">
-                                                                    <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                                    <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                                 </form>
                                                             </td>
                                                         </tr>

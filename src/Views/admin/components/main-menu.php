@@ -14,6 +14,15 @@
                 </li>
 
                 <li class>
+                    <a href="/admin/donhang" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-aperture rotate-refresh"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý Đơn Hàng</span>
+                    </a>
+                </li>
+
+                <li class>
                     <a href="/admin/users" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-layers"></i>
@@ -37,6 +46,15 @@
                             <i class="feather icon-aperture rotate-refresh"></i>
                         </span>
                         <span class="pcoded-mtext">Quản lý Comments</span>
+                    </a>
+                </li>
+
+                <li class>
+                    <a href="/admin/sanpham" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-aperture rotate-refresh"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý Sản phẩm</span>
                     </a>
                 </li>
         </div>

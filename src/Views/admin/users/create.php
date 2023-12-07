@@ -41,24 +41,24 @@
                                     <div class="card-block">
                                         <form action="" method="post">
                                             <label for="tk_user">Name</label>
-                                            <input type="text" name="tk_user" class="form-control">
+                                            <input type="text" name="tk_user" class="form-control" required>
 
                                             <label for="pass_user" class="mt-3">Pass</label>
-                                            <input type="password" name="pass_user" class="form-control">
+                                            <input type="password" name="pass_user" class="form-control" required>
 
-                                            <label for="diachi_user" class="mt-3">Dia chi</label>
-                                            <input type="text" name="diachi_user" class="form-control">
+                                            <label for="diachi_user" class="mt-3">Địa chỉ</label>
+                                            <input type="text" name="diachi_user" class="form-control" required>
 
                                             <label for="sdt_user" class="mt-3">SDT</label>
-                                            <input type="text" name="sdt_user" class="form-control">
+                                            <input type="text" name="sdt_user" class="form-control" required>
 
                                             <label for="email_user" class="mt-3">Email</label>
-                                            <input type="email" name="email_user" class="form-control">
+                                            <input type="email" name="email_user" class="form-control" required>
 
-                                            <label for="role" class="mt-3">Chuc nang</label>
-                                            <input type="text" name="role" class="form-control">
+                                            <label for="role" class="mt-3">Chức năng(0 admin, 1 khách hàng)</label>
+                                            <input type="text" name="role" class="form-control" required>
 
-                                            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
+                                            <button type="submit" name="btn-submit-login" class="btn btn-info mt-3">Submit</button>
                                             <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
                                         </form>
                                     </div>

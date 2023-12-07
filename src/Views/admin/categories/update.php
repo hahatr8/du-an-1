@@ -41,7 +41,6 @@
                                         <form action="" method="post">
                                             <label for="name">Name</label>
                                             <input type="text" name="ten_dm" class="form-control" value="<?= $category['ten_dm'] ?>">
-
                                             <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                             <a href="/admin/categories" class="btn btn-primary mt-3">Quay lại d/s</a>
                                         </form>
