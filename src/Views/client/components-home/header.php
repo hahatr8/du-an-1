@@ -38,13 +38,13 @@
                 </div>
             </div>
         </form>
-        <?php if ($_SESSION['tk_user'] == []) : ?>
+        <?php if (empty($_SESSION['tk_user'])) : ?>
             <li><a href="/login" class="feather icon-user"></a></li>
         <?php else : ?>
             <li><a href="/indexTaiKhoan"><?= $_SESSION['tk_user'] ?></a></li>
         <?php endif; ?>
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
-        <li><a href="" class="feather icon-log-out" name="logout"></a></li>
+        <li><a href="" class="feather icon-log-out" name="logout" onclick="<?= session_unset(); ?>"></a></li>
 
         <!-- <form method="post">
             <button class="dropdown-item" type="submit" name="logout">Đăng Xuất</button>
