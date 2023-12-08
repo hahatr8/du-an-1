@@ -38,7 +38,11 @@
                 </div>
             </div>
         </form>
-        <li><a href="/login" class="feather icon-user"></a></li>
+        <?php if ($_SESSION['tk_user'] == []) : ?>
+            <li><a href="/login" class="feather icon-user"></a></li>
+        <?php else : ?>
+            <li><a href="/indexTaiKhoan"><?= $_SESSION['tk_user'] ?></a></li>
+        <?php endif; ?>
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
         <li><a href="" class="feather icon-log-out" name="logout"></a></li>
 
