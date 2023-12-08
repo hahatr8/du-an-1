@@ -48,13 +48,15 @@ class Order extends Model
             $idSanPham = $item['id_sp'];
             $soLuong = $item['soluong_sp'];
             $giaSanPham = $this->cart->getGiaSanPham($idSanPham);
+            $tongTien = $this->cart->calculateTotalPrice($id_user);
 
-            $sql = "INSERT INTO chitietdonhang (id_dh, id_sp, soluong, gia_donhang) VALUES (:id_dh, :id_sp, :soluong, :gia_donhang)";
+            $sql = "INSERT INTO chitietdonhang (id_dh, id_sp, soluong, gia_donhang, tongtien) VALUES (:id_dh, :id_sp, :soluong, :gia_donhang, :tongtien)";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':id_dh', $id_dh);
             $stmt->bindParam(':id_sp', $idSanPham);
             $stmt->bindParam(':soluong', $soLuong);
             $stmt->bindParam(':gia_donhang', $giaSanPham);
+            $stmt->bindParam(':tongtien', $tongTien);
             $stmt->execute();
         }
 
