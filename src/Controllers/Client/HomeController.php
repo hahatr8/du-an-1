@@ -22,6 +22,12 @@ class HomeController extends Controller
 
         $danhSachSanPhamHot = (new Sanpham())->productHot();
 
+        if (isset($_POST['logout'])) {
+            session_destroy();
+            header('Location: /login');
+            exit();
+        }
+
         return $this->render('client/home', [
             "danhSachSanPham" => $danhSachSanPham,
             "danhSachSanPhamHot" => $danhSachSanPhamHot,
