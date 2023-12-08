@@ -67,7 +67,10 @@
 
             <h6>Số lượng còn lại trong Kho: <?= $sanpham[0]['s_soluong_sp'] ?></h6>
             <form action="/addToCart" method="post" onsubmit="return kiemTraSoLuong()">
-                <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+                <?php if (empty($_SESSION['tk_user'])) : ?>
+                <?php else : ?>
+                    <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+                <?php endif; ?>
                 <input type="hidden" name="id_sp" value="<?= $sanpham[0]['s_id'] ?>">
                 <button name="btn-addToCart" type="submit" class="normal w">Thêm vào giỏ hàng</button>
                 <br>
@@ -83,10 +86,17 @@
         <h3>Viết bình luận</h3>
         <form action="/sproduct/create" method="POST">
             <input type="hidden" name="id_sp" value="<?= $sanpham[0]['s_id'] ?>">
-            <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+            <?php if (empty($_SESSION['tk_user'])) : ?>
+            <?php else : ?>
+                <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
+            <?php endif; ?>
             <input type="hidden" name="id_dm" value="<?= $sanpham[0]['s_id_dm'] ?>">
             <textarea id="comment-input" name="noidung" placeholder="Nhập bình luận của bạn..."></textarea>
-            <button id="comment-submit" type="submit" name="btn-submit">Gửi</button>
+            <?php if (empty($_SESSION['tk_user'])) : ?>
+                <p>Bạn chưa đăng nhập! Cần đăng nhập để bình luận</p>
+            <?php else : ?>
+                <button id="comment-submit" type="submit" name="btn-submit">Gửi</button>
+            <?php endif; ?>
         </form>
     </div>
     <div class="comment-list">

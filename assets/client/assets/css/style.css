@@ -127,7 +127,9 @@ button.normal {
 .others li:first-child {
     position: relative;
 }
-
+#delete {
+    margin-top: 30px;
+}
 .others li:first-child input {
     width: 100%;
     border: none;

@@ -44,7 +44,9 @@
             <li><a href="/indexTaiKhoan"><?= $_SESSION['tk_user'] ?></a></li>
         <?php endif; ?>
         <li><a href="/cart" class="feather icon-shopping-cart"></a></li>
-        <li><a href="" class="feather icon-log-out" name="logout" onclick="<?= session_unset(); ?>"></a></li>
+        <form method="post">
+            <button id="delete" class="dropdown-item feather icon-log-out" type="submit" name="logout"></button>
+        </form>
 
         <!-- <form method="post">
             <button class="dropdown-item" type="submit" name="logout">Đăng Xuất</button>
